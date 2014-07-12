@@ -1,0 +1,40 @@
+﻿<div data-ng-show="!{{active}}">
+    <button type="button" data-ng-click="UserRegister()">Register</button>
+    <br />
+    <h4>Login</h4>
+    <form name="login">
+        <span>{{ login.error }}</span>
+        <label for="Email">Email:</label>
+        <input type="text" id="Email" placeholder="Email" data-ng-model="login.email" data-ng-minlength="1" data-ng-maxlength="254" data-ng-required="true" />
+
+        <label for="Password">Password:</label>
+        <input type="password" id="Password" placeholder="Password" data-ng-model="login.password" data-ng-minlength="6" data-ng-maxlength="30" data-ng-required="true" />
+
+        <button type="button" data-ng-click="loginUser()">Log In</button>
+    </form>
+</div>
+<div data-ng-show="{{active}}">
+    <button type="button" data-ng-click="UserLogout()">Log Out</button>
+
+    <div>
+        <h4>User Details:</h4>
+        <img src="{{ user.ProfilePicture }}" alt="{{ user.FirstName  + user.LastName}}" />
+        <span>ID: {{ user.Id }}</span><br />
+        <span>First Name: {{ user.FirstName }}</span><br />
+        <span>Last Name: {{ user.LastName }}</span><br />
+        <span>Company: {{ user.Company }}</span><br />
+        <span>Email: {{ user.Email }}</span><br />
+        <span>Contact Number: {{ user.ContactNumber }}</span><br />
+        <span>Industry: {{ user.Industry }}</span><br />
+        <span>Role: {{ user.Role }}</span><br />
+        <span>LinkedIn: {{ user.LinkedIn }}</span><br />
+        <span>Twitter: {{ user.Twitter }}</span><br />
+        <span>GPlus: {{ user.GPlus }}</span><br />
+    </div>
+</div>
+
+<script>
+    function ShareStatus() {
+        IN.UI.Share().params({ url: "http://www.example.com" }).place();
+    }
+</script>

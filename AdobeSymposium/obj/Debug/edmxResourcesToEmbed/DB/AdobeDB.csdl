@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="adobesymposiumdbModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="adobesymposiumdbEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="tblIndustries1" EntityType="adobesymposiumdbModel.tblIndustry" />
+    <EntitySet Name="tblRegistrations1" EntityType="adobesymposiumdbModel.tblRegistration" />
+    <EntitySet Name="tblRoles1" EntityType="adobesymposiumdbModel.tblRole" />
+  </EntityContainer>
+  <EntityType Name="tblIndustry">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IndustryName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tblRegistration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Company" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="254" Unicode="false" FixedLength="false" />
+    <Property Name="ContactNumber" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Industry" Type="Int32" Nullable="false" />
+    <Property Name="Role" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="ProfilePicture" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="LinkedIn" Type="String" MaxLength="254" Unicode="false" FixedLength="false" />
+    <Property Name="Twitter" Type="String" MaxLength="254" Unicode="false" FixedLength="false" />
+    <Property Name="GPlus" Type="String" MaxLength="254" Unicode="false" FixedLength="false" />
+    <Property Name="Timestamp" Type="DateTime" Nullable="false" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="254" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+</Schema>

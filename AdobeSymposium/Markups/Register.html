@@ -1,0 +1,83 @@
+﻿<form role="form" name="user" novalidate>
+    <div>
+        <!--data-ng-init="init()"-->
+
+        <div class="form-group">
+            <label for="Email">Email:</label>
+            <input class="form-control" type="text" id="Email" placeholder="Email" data-ng-model="user.email" data-ng-minlength="1" data-ng-maxlength="254" data-ng-required="true" data-ng-blur="emailChecker()" />
+            <div data-ng-show="user.email.$invalid && !user.email.$pristine" class="text-danger">Your email is required.</div>
+            <div data-ng-show="{{ emailCheck }}" data-ng-model="emailCheck" class="text-danger">Email is already in used.</div>
+            <span>Show: {{ emailCheck }}</span>
+        </div>
+
+        <div class="form-group">
+            <label for="Password">Password:</label>
+            <input class="form-control" type="password" id="Password" placeholder="Password" data-ng-model="user.password" data-ng-minlength="6" data-ng-maxlength="30" data-ng-required="true" />
+        </div>
+
+        <div class="form-group">
+            <label for="ConfirmPassword">Confirm Password:</label>
+            <input class="form-control" type="password" id="ConfirmPassword" placeholder="Confirm password" data-ng-model="user.confirmPassword" data-ng-minlength="6" data-ng-maxlength="30" data-ng-required="true" />
+        </div>
+
+        <hr />
+
+        <div class="form-group" data-ng-class="{ 'has-error' : user.firstName.$invalid }">
+            <label for="firstName">First Name:</label>
+            <input class="form-control" type="text" id="firstName" placeholder="First Name" data-ng-minlength="1" data-ng-maxlength="30" data-ng-required="true" value="{{user.firstName}}" />
+            <div data-ng-show="user.firstName.$invalid" class="text-danger">Your name is required.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input class="form-control" type="text" id="lastName" placeholder="Last Name" data-ng-model="user.lastName" data-ng-minlength="1" data-ng-maxlength="30" data-ng-required="true" />
+            <div data-ng-show="user.lastName.$invalid && !user.lastName.$pristine" class="text-danger">Your name is required.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="CompanyName">Company Name:</label>
+            <input class="form-control" type="text" id="CompanyName" placeholder="Company Name" data-ng-model="user.company" data-ng-minlength="1" data-ng-maxlength="100" data-ng-required="true" />
+            <div data-ng-show="user.company.$invalid && !user.company.$pristine" class="text-danger">Your company name is required.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="ContactNumber">Contact Number:</label>
+            <input class="form-control" type="text" id="ContactNumber" placeholder="Contact Number" data-ng-model="user.contactNumber" data-ng-minlength="1" data-ng-maxlength="30" data-ng-required="true" />
+            <div data-ng-show="user.contactNumber.$invalid && !user.contactNumber.$pristine" class="text-danger">Your contact number is required.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="Industry">Industry:</label>
+            <select id="Industry" data-ng-model="user.industry" data-ng-options="ind.industryId as ind.industryName for ind in industryList" data-ng-required="true"></select>
+        </div>
+
+        <div class="form-group">
+            <label for="role">Role:</label>
+            <input class="form-control" type="text" id="Role" placeholder="Role" data-ng-model="user.role" data-ng-minlength="1" data-ng-maxlength="30" data-ng-required="true" />
+            <div data-ng-show="user.role.$invalid && !user.role.$pristine" class="text-danger">Your role is required.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="picture">Picture:</label>
+            <img src="{{ user.profilePicture }}" alt="{{ user.firstName + ' ' + user.lastName }}" />
+        </div>
+
+        <div class="form-group">
+            <label for="ranAnswer">Spam check: {{user.ranOne + ' + ' + user.ranTwo}} =</label>
+            <input class="form-control" type="text" id="RanAnswer" placeholder="Answer" data-ng-model="user.ranAns" data-ng-minlength="1" data-ng-required="true" />
+        </div>
+
+        <input type="text" id="LinkedIn" placeholder="LinkedIn Profile" data-ng-model="user.linkedIn" />
+        <input type="text" id="Twitter" placeholder="Twitter" data-ng-model="user.twitter" />
+        <input type="text" id="GPlus" placeholder="Google Plus" data-ng-model="user.gPlus" />
+        <input type="text" id="Facebook" placeholder="Facebook" data-ng-model="user.facebook" />
+
+
+        <button type="submit" class="btn btn-success" data-ng-class="{ 'disabled' : user.$invalid, 'disabled' : user.formSubmitted }" data-ng-click="registerUser(user.$valid)">Register</button>
+
+        <!--For form validation-->
+        <!--http://scotch.io/tutorials/javascript/angularjs-form-validation-->
+        <!--http://jsfiddle.net/adamdbradley/Qdk5M/-->
+        <!--https://docs.angularjs.org/guide/forms-->
+    </div>
+</form>

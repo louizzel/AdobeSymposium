@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="adobesymposiumdbModelStoreContainer" CdmEntityContainer="adobesymposiumdbEntities">
+    <EntitySetMapping Name="tblIndustries1">
+      <EntityTypeMapping TypeName="adobesymposiumdbModel.tblIndustry">
+        <MappingFragment StoreEntitySet="tblindustries">
+          <ScalarProperty Name="Id" ColumnName="industry_id" />
+          <ScalarProperty Name="IndustryName" ColumnName="industry_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRegistrations1">
+      <EntityTypeMapping TypeName="adobesymposiumdbModel.tblRegistration">
+        <MappingFragment StoreEntitySet="tblregistration">
+          <ScalarProperty Name="Password" ColumnName="password" />
+          <ScalarProperty Name="Id" ColumnName="registration_id" />
+          <ScalarProperty Name="FirstName" ColumnName="first_name" />
+          <ScalarProperty Name="LastName" ColumnName="last_name" />
+          <ScalarProperty Name="Company" ColumnName="company" />
+          <ScalarProperty Name="Email" ColumnName="email" />
+          <ScalarProperty Name="ContactNumber" ColumnName="contact_number" />
+          <ScalarProperty Name="Industry" ColumnName="industry" />
+          <ScalarProperty Name="Role" ColumnName="role" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="profile_picture" />
+          <ScalarProperty Name="LinkedIn" ColumnName="linkedin" />
+          <ScalarProperty Name="Twitter" ColumnName="twitter" />
+          <ScalarProperty Name="GPlus" ColumnName="gplus" />
+          <ScalarProperty Name="Timestamp" ColumnName="timestamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRoles1">
+      <EntityTypeMapping TypeName="adobesymposiumdbModel.tblRole">
+        <MappingFragment StoreEntitySet="tblroles">
+          <ScalarProperty Name="Id" ColumnName="role_id" />
+          <ScalarProperty Name="RoleName" ColumnName="role_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

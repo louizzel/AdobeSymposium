@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="adobesymposiumdbModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="adobesymposiumdbModelStoreContainer">
+          <EntitySet Name="tblindustries" EntityType="adobesymposiumdbModel.Store.tblindustries" store:Type="Tables" Schema="adobesymposiumdb" />
+          <EntitySet Name="tblregistration" EntityType="adobesymposiumdbModel.Store.tblregistration" store:Type="Tables" Schema="adobesymposiumdb" />
+          <EntitySet Name="tblroles" EntityType="adobesymposiumdbModel.Store.tblroles" store:Type="Tables" Schema="adobesymposiumdb" />
+        </EntityContainer>
+        <EntityType Name="tblindustries">
+          <Key>
+            <PropertyRef Name="industry_id" />
+          </Key>
+          <Property Name="industry_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="industry_name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblregistration">
+          <Key>
+            <PropertyRef Name="registration_id" />
+          </Key>
+          <Property Name="registration_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="first_name" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="last_name" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="company" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="email" Type="varchar" Nullable="false" MaxLength="254" />
+          <Property Name="password" Type="varchar" Nullable="false" MaxLength="254" />
+          <Property Name="contact_number" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="industry" Type="int" Nullable="false" />
+          <Property Name="role" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="profile_picture" Type="text" />
+          <Property Name="linkedin" Type="varchar" MaxLength="254" />
+          <Property Name="twitter" Type="varchar" MaxLength="254" />
+          <Property Name="gplus" Type="varchar" MaxLength="254" />
+          <Property Name="timestamp" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblroles">
+          <Key>
+            <PropertyRef Name="role_id" />
+          </Key>
+          <Property Name="role_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="role_name" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="adobesymposiumdbModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="adobesymposiumdbEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="tblIndustries1" EntityType="adobesymposiumdbModel.tblIndustry" />
+          <EntitySet Name="tblRegistrations1" EntityType="adobesymposiumdbModel.tblRegistration" />
+          <EntitySet Name="tblRoles1" EntityType="adobesymposiumdbModel.tblRole" />
+        </EntityContainer>
+        <EntityType Name="tblIndustry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IndustryName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tblRegistration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Company" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="254" Unicode="false" FixedLength="false" />
+          <Property Name="ContactNumber" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Industry" Type="Int32" Nullable="false" />
+          <Property Name="Role" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="ProfilePicture" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="LinkedIn" Type="String" MaxLength="254" Unicode="false" FixedLength="false" />
+          <Property Name="Twitter" Type="String" MaxLength="254" Unicode="false" FixedLength="false" />
+          <Property Name="GPlus" Type="String" MaxLength="254" Unicode="false" FixedLength="false" />
+          <Property Name="Timestamp" Type="DateTime" Nullable="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="254" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="adobesymposiumdbModelStoreContainer" CdmEntityContainer="adobesymposiumdbEntities">
+          <EntitySetMapping Name="tblIndustries1">
+            <EntityTypeMapping TypeName="adobesymposiumdbModel.tblIndustry">
+              <MappingFragment StoreEntitySet="tblindustries">
+                <ScalarProperty Name="Id" ColumnName="industry_id" />
+                <ScalarProperty Name="IndustryName" ColumnName="industry_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRegistrations1">
+            <EntityTypeMapping TypeName="adobesymposiumdbModel.tblRegistration">
+              <MappingFragment StoreEntitySet="tblregistration">
+                <ScalarProperty Name="Password" ColumnName="password" />
+                <ScalarProperty Name="Id" ColumnName="registration_id" />
+                <ScalarProperty Name="FirstName" ColumnName="first_name" />
+                <ScalarProperty Name="LastName" ColumnName="last_name" />
+                <ScalarProperty Name="Company" ColumnName="company" />
+                <ScalarProperty Name="Email" ColumnName="email" />
+                <ScalarProperty Name="ContactNumber" ColumnName="contact_number" />
+                <ScalarProperty Name="Industry" ColumnName="industry" />
+                <ScalarProperty Name="Role" ColumnName="role" />
+                <ScalarProperty Name="ProfilePicture" ColumnName="profile_picture" />
+                <ScalarProperty Name="LinkedIn" ColumnName="linkedin" />
+                <ScalarProperty Name="Twitter" ColumnName="twitter" />
+                <ScalarProperty Name="GPlus" ColumnName="gplus" />
+                <ScalarProperty Name="Timestamp" ColumnName="timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRoles1">
+            <EntityTypeMapping TypeName="adobesymposiumdbModel.tblRole">
+              <MappingFragment StoreEntitySet="tblroles">
+                <ScalarProperty Name="Id" ColumnName="role_id" />
+                <ScalarProperty Name="RoleName" ColumnName="role_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

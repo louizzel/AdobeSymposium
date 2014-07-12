@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="adobesymposiumdbModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="adobesymposiumdbModelStoreContainer">
+    <EntitySet Name="tblindustries" EntityType="adobesymposiumdbModel.Store.tblindustries" store:Type="Tables" Schema="adobesymposiumdb" />
+    <EntitySet Name="tblregistration" EntityType="adobesymposiumdbModel.Store.tblregistration" store:Type="Tables" Schema="adobesymposiumdb" />
+    <EntitySet Name="tblroles" EntityType="adobesymposiumdbModel.Store.tblroles" store:Type="Tables" Schema="adobesymposiumdb" />
+  </EntityContainer>
+  <EntityType Name="tblindustries">
+    <Key>
+      <PropertyRef Name="industry_id" />
+    </Key>
+    <Property Name="industry_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="industry_name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblregistration">
+    <Key>
+      <PropertyRef Name="registration_id" />
+    </Key>
+    <Property Name="registration_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="first_name" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="last_name" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="company" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="email" Type="varchar" Nullable="false" MaxLength="254" />
+    <Property Name="password" Type="varchar" Nullable="false" MaxLength="254" />
+    <Property Name="contact_number" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="industry" Type="int" Nullable="false" />
+    <Property Name="role" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="profile_picture" Type="text" />
+    <Property Name="linkedin" Type="varchar" MaxLength="254" />
+    <Property Name="twitter" Type="varchar" MaxLength="254" />
+    <Property Name="gplus" Type="varchar" MaxLength="254" />
+    <Property Name="timestamp" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblroles">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="role_name" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+</Schema>
