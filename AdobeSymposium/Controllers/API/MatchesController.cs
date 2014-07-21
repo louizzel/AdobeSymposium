@@ -22,7 +22,7 @@ namespace AdobeSymposium.Controllers
             {
                 foreach (var temp in data.industryIds.Select(t => (from table in entity.tblRegistrations1
                     where table.Role.Equals(t1.ToString(CultureInfo.InvariantCulture)) && table.Industry == t && table.Id != data.userId
-                    select new Lead {id = table.Id, ind = table.Industry, ro = int.Parse(table.Role)}).ToList()))
+                    select new Lead {id = table.Id, ind = table.Industry, ro = table.Role}).ToList()))
                 {
                     result.AddRange(temp);
                 }

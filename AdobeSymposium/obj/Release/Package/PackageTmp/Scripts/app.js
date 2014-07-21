@@ -143,17 +143,17 @@ app.controller('ProfileController', function ($scope, $http) {
             });
         };
 
-        $http({
-            method: 'GET',
-            url: '/api/profile',
-            params: { id: localStorage["user_id"] }
-        }).success(function (data) {
-            $scope.roles = data.Roles;
-            $scope.industries = data.Industries;
-            $scope.init(data.UserProfile, data.People);
-        }).error(function (err) {
-            console.log("An error occured while retrieving the user's profile. " + err);
-        });
+        //$http({
+        //    method: 'GET',
+        //    url: '/api/profile',
+        //    params: { id: localStorage["user_id"] }
+        //}).success(function (data) {
+        //    $scope.roles = data.Roles;
+        //    $scope.industries = data.Industries;
+        //    $scope.init(data.UserProfile, data.People);
+        //}).error(function (err) {
+        //    console.log("An error occured while retrieving the user's profile. " + err);
+        //});
 
         $scope.init = function (data, people) {
             $scope.user.Id = data.Id;

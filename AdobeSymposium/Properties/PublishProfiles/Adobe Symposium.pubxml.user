@@ -49,7 +49,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/09/2014 22:09:37</publishTime>
     </File>
     <File Include="bin/AdobeSymposium.dll">
-      <publishTime>07/21/2014 19:48:24</publishTime>
+      <publishTime>07/22/2014 02:39:36</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>07/17/2014 12:52:03</publishTime>
@@ -553,7 +553,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/18/2014 16:06:10</publishTime>
     </File>
     <File Include="Markups/Connect.html">
-      <publishTime>07/21/2014 18:55:18</publishTime>
+      <publishTime>07/22/2014 02:34:28</publishTime>
     </File>
     <File Include="Markups/Event.html">
       <publishTime>07/21/2014 18:52:53</publishTime>
@@ -574,10 +574,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/20/2014 15:07:51</publishTime>
     </File>
     <File Include="Scripts/app.js">
-      <publishTime>07/21/2014 19:30:44</publishTime>
+      <publishTime>07/21/2014 23:31:07</publishTime>
     </File>
     <File Include="Scripts/connect.js">
-      <publishTime>07/21/2014 16:36:19</publishTime>
+      <publishTime>07/22/2014 02:20:42</publishTime>
     </File>
     <File Include="Scripts/controllers.js">
       <publishTime>07/21/2014 19:05:02</publishTime>
@@ -658,7 +658,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/09/2014 22:09:42</publishTime>
     </File>
     <File Include="Scripts/services.js">
-      <publishTime>07/21/2014 19:01:47</publishTime>
+      <publishTime>07/22/2014 01:55:19</publishTime>
     </File>
     <File Include="Scripts/vendor/angular-route.js">
       <publishTime>07/04/2014 14:00:33</publishTime>

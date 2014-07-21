@@ -26,7 +26,7 @@ namespace AdobeSymposium.Controllers.API
             }
             catch (Exception exception)
             {
-                throw new Exception("Please make sure you are connected to the internet.");
+                throw new Exception("Please make sure you are connected to the internet. " + exception.Message);
             }
         }
     }

@@ -190,6 +190,7 @@
     <Compile Include="Controllers\API\LoginController.cs" />
     <Compile Include="Controllers\API\PeopleController.cs" />
     <Compile Include="Controllers\API\ProfileController.cs" />
+    <Compile Include="Controllers\API\ServicesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\API\IndustryController.cs" />
     <Compile Include="Controllers\API\MatchesController.cs" />

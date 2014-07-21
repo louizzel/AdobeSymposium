@@ -30,27 +30,5 @@ namespace AdobeSymposium.Controllers.API
             return (from table in entity.tblRegistrations1 where table.Id != id
                 select new Person {Id = table.Id, IndustryId = table.Industry, RoleId = table.Role, Visible = true}).ToList();
         }
-
-        //Retrieves the details of the user being selected
-        public CompleteProfile Get(int id, string user)
-        {
-            return (from table in entity.tblRegistrations1 where table.Id == id
-                select new CompleteProfile
-                {
-                    Id = table.Id,
-                    IndustryId = table.Industry,
-                    RoleId = table.Role,
-                    FirstName = table.FirstName,
-                    LastName = table.LastName,
-                    Company = table.Company,
-                    Email = table.Email,
-                    ContactNumber = table.ContactNumber,
-                    ProfilePicture = table.ProfilePicture,
-                    Facebook = table.Facebook,
-                    GPlus = table.GPlus,
-                    LinkedIn = table.LinkedIn,
-                    Twitter = table.Twitter
-                }).FirstOrDefault();
-        }
     }
 }

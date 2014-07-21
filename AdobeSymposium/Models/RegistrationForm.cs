@@ -89,16 +89,14 @@ namespace AdobeSymposium.Models
 
     public class Industry
     {
-        public int industryId { get; set; }
-        public string industryName { get; set; }
-        public bool visible { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
     }
 
     public class Role
     {
-        public int roleId { get; set; }
-        public string roleName { get; set; }
-        public bool visible { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
     }
 
     public class Dropdowns

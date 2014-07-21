@@ -16,7 +16,7 @@ namespace AdobeSymposium.Controllers
         //Retrieves all the industries from the database (dropdown population)
         public List<Industry> Get()
         {
-            return (from table in entity.tblIndustries1 select new Industry { industryId = table.Id, industryName = table.IndustryName, visible = true}).ToList();
+            return (from table in entity.tblIndustries1 select new Industry { id = table.Id, name = table.IndustryName}).ToList();
         }
 
         //Retrieves list of industry names
@@ -34,7 +34,7 @@ namespace AdobeSymposium.Controllers
         //Retrieves all the industries of the registered participants
         public List<Industry> Get(int x, int y)
         {
-            return (from table in entity.tblIndustries1 join table2 in entity.tblRegistrations1 on table.Id equals table2.Industry select new Industry { industryId = table.Id, industryName = table.IndustryName, visible = true}).Distinct().ToList();
+            return (from table in entity.tblIndustries1 join table2 in entity.tblRegistrations1 on table.Id equals table2.Industry select new Industry { id = table.Id, name = table.IndustryName }).Distinct().ToList();
         }
     }
 }

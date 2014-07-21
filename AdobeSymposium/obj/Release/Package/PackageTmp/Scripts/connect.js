@@ -1,7 +1,7 @@
 ﻿/* LinkedIn JavaScript API Start */
 function onLinkedInLoad() {
     IN.Event.on(IN, 'auth', onLinkedInAuth);
-    $('a[id*=li_ui_li_gen_]').css({ marginBottom: '20px' }).addClass('icon1').html('<img src="/Images/linkedin.png" height="96" width="96" border="0" />');
+    $('a[id*=li_ui_li_gen_]').css({ marginBottom: '20px' }).addClass('icon1').html('<img src="/Images/linkedin.png" height="96" width="99" border="0" />');
 }
 
 function onLinkedInAuth() {

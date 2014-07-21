@@ -20,10 +20,10 @@ angular.module('symposiumApp.services', [])
 
         function init() {
 
-            $http.get('/data/settings.json?id=' + new Date().getTime()).then(function (json) {
-
+            //get the roles and industries
+            $http.get('/api/services?id=' + localStorage["user_id"]).then(function (json) {
                 User = json.data.user;
-                 
+                console.log(User);
                 var _filters = json.data.filters;
 
                 _filters.roles.forEach(function(filter) {
@@ -37,7 +37,6 @@ angular.module('symposiumApp.services', [])
                 Filters = _filters;
 
                 findLeads();
-
             });
         }
 
@@ -54,22 +53,31 @@ angular.module('symposiumApp.services', [])
         		if(Filters.industries[i].isSelected) selectedIndustries += (Filters.industries[i].id + ',');
         	}
 
-            $http.get('/data/leads-2in-2ro.json?id=' + new Date().getTime()).then( onLeadsReceived );
+        	if (selectedRoles.slice(selectedRoles.length - 1, selectedRoles.length) == ",") selectedRoles = selectedRoles.slice(0, selectedRoles.length - 1);
+        	if (selectedIndustries.slice(selectedIndustries.length - 1, selectedIndustries.length) == ",") selectedIndustries = selectedIndustries.slice(0, selectedIndustries.length - 1);
+
+        	$http.get('/api/services?' + selectedRoles + "&" + selectedIndustries + "&userId=" + localStorage["user_id"]).then(onLeadsReceived);
         }
 
         function onLeadsReceived( json ) {
 
-            var tempLeads = json.data.leads.map(function(node) { 
-                //node.radius = Math.random() * 50 + 4;
-                node.radius = 30;
-                return node;
-             });
+            if (json.data) {
+                if (json.data.length > 0) {
+                    var tempLeads = json.data.map(function(node) {
+                        //node.radius = Math.random() * 50 + 4;
+                        node.radius = 30;
+                        return node;
+                    });
 
-            Leads = tempLeads;
+                    Leads = tempLeads;
+                } else {
+
+                }
+            }
         }
 
         function findLead(id) {
-            $http.get('/data/lead.json?id=' + new Date().getTime())
+            $http.get('/api/services?id=' + id + "&userId=" + localStorage["user_id"])
                  .then( onLeadReceived );
         }
 
