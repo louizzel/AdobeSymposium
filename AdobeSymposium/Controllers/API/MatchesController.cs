@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -13,15 +14,27 @@ namespace AdobeSymposium.Controllers
     {
         readonly adobesymposiumdbEntities entity = new adobesymposiumdbEntities();
 
+        public List<Lead> Get(MatchParams data)
+        {
+            var result = new List<Lead>();
+
+            foreach (int t1 in data.roleIds)
+            {
+                foreach (var temp in data.industryIds.Select(t => (from table in entity.tblRegistrations1
+                    where table.Role.Equals(t1.ToString(CultureInfo.InvariantCulture)) && table.Industry == t && table.Id != data.userId
+                    select new Lead {id = table.Id, ind = table.Industry, ro = int.Parse(table.Role)}).ToList()))
+                {
+                    result.AddRange(temp);
+                }
+            }
+
+            return result;
+        }
+
         //Gets the list of matches of the user
         public List<tblRegistration> Get(int id, string type, int page)
         {
-            var result = new List<tblRegistration>();
-            if (type.Equals("role"))
-                result = (from table in entity.tblRegistrations1 where table.Role.Equals(GetRoleOfUser(id)) select table).Skip((page - 1) * 30).Take(30).ToList();
-            else
-                result = (from table in entity.tblRegistrations1 where table.Industry == (GetIndustryOfUser(id)) select table).Skip((page - 1) * 30).Take(30).ToList();
-            return result;
+            return type.Equals("role") ? (from table in entity.tblRegistrations1 where table.Role.Equals(GetRoleOfUser(id)) select table).Skip((page - 1) * 30).Take(30).ToList() : (from table in entity.tblRegistrations1 where table.Industry == (GetIndustryOfUser(id)) select table).Skip((page - 1) * 30).Take(30).ToList();
         }
 
         //Get the role id of the user
@@ -34,8 +47,8 @@ namespace AdobeSymposium.Controllers
         //Get the industry id of the user
         public int GetIndustryOfUser(int id)
         {
-            var temp = (from table in entity.tblRegistrations1 where table.Id == id select table.Industry).FirstOrDefault();
-            return temp == null ? 0 : temp;
+            return (from table in entity.tblRegistrations1 where table.Id == id select table.Industry).FirstOrDefault();
+            //return temp == null ? 0 : temp;
         }
     }
 }

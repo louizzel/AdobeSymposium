@@ -11,20 +11,28 @@ namespace AdobeSymposium.Controllers.API
 {
     public class ProfileController : ApiController
     {
-        readonly adobesymposiumdbEntities entity = new adobesymposiumdbEntities();
-        private RoleController roleCtrl = new RoleController();
-        private IndustryController industryCtrl = new IndustryController();
+        readonly adobesymposiumdbEntities _entity = new adobesymposiumdbEntities();
+        private readonly RoleController _roleCtrl = new RoleController();
+        private readonly IndustryController _industryCtrl = new IndustryController();
+        private readonly PeopleController _peopleCtrl = new PeopleController();
 
         //Get profile of user via Id
-        public tblRegistration Get(int id)
+        public Profile Get(int id)
         {
-            return (from table in entity.tblRegistrations1 where table.Id == id select table).SingleOrDefault();
+            var result = new Profile
+            {
+                Roles = _roleCtrl.Get(),
+                Industries = _industryCtrl.Get(0, 0),
+                People = _peopleCtrl.Get(id),
+                UserProfile = (from table in _entity.tblRegistrations1 where table.Id == id select table).SingleOrDefault()
+            };
+            return result;
         }
 
         //Update the profile of the user via id
         public void Post(tblRegistration data)
         {
-            var temp = entity.tblRegistrations1.Single(m => m.Id == data.Id);
+            var temp = _entity.tblRegistrations1.Single(m => m.Id == data.Id);
             temp.FirstName = data.FirstName;
             temp.LastName = data.LastName;
             temp.Company = data.Company;
@@ -37,7 +45,7 @@ namespace AdobeSymposium.Controllers.API
             temp.GPlus = data.GPlus;
             temp.ProfilePicture = data.ProfilePicture;
             temp.Timestamp = DateTime.Now;
-            entity.SaveChanges();
+            _entity.SaveChanges();
         }
     }
 }

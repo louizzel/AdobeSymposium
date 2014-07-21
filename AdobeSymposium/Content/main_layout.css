@@ -1,0 +1,428 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Raleway:500);
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #c0c0c0;
+    color: #939494;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+}
+
+header, footer, hgroup,
+nav, section {
+    display: block;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+    color: #939494;
+    margin-bottom: .5em;
+    padding-bottom: 0;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5, h6 {
+    font-size: 1em;
+}
+
+a {
+    color: #939494;
+    outline: none;
+    text-decoration: none;
+}
+
+    a:link, a:visited,
+    a:active, a:hover {
+        /*color: #333;*/
+    }
+
+    a:hover {
+        /*background-color: #c7d1d6;*/
+    }
+
+.pull-right {
+    float: right !important;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left !important;
+}
+
+.right {
+    text-align: right;
+}
+
+hr {
+    color: #d9d9d9;
+    background-color: #d9d9d9;
+    height: 1px;
+    border: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+}
+
+.btn-default {
+    border-color: #afafb0;
+    color: #939494;
+    background: none;
+}
+
+    .btn-default:hover,
+    .btn-default:focus,
+    .btn-default:active {
+        outline: none;
+    }
+
+.btn-lg {
+    padding: 10px 15px;
+    font-size: 18px;
+    line-height: 1.33;
+}
+
+input, textarea, select {
+    border: 1px solid #afafb0;
+    background: #1a1a1c;
+    box-shadow: none;
+    color: #939494;
+    font-size: .8em;
+    margin: 5px 0;
+    padding: 10px;
+    width: 50%;
+}
+
+select {
+    width: 53%;
+}
+
+.text-danger {
+    padding-left: 37%;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #d44950;
+}
+
+.help-block {
+    padding-left: 37%;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #f0ad4e;
+}
+
+.alert-warning {
+    color: #31708f;
+}
+
+.raleway {
+    font-weight: normal;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 0;
+}
+
+.hide {
+    display: none;
+}
+
+/* --- body --- */
+header {
+    background: url(../Images/shape_1.png) no-repeat left 0;
+    height: 244px;
+}
+
+.container {
+    background-color: #181a1b;
+    background-image: url(../Images/blue_shade.png);
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    display: table;
+    height: 100%;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.content {
+    display: table-row;
+    height: 100%;
+}
+
+.content-body {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 15px;
+}
+
+
+footer {
+    background: url(../Images/shape_2.png) no-repeat right 0;
+    height: 208px;
+}
+/* ---/ body --- */
+
+.mega-hdr {
+    margin-bottom: 25px;
+}
+
+    .mega-hdr h1 {
+        color: #3892ba;
+    }
+
+.icon_container {
+    background: url(../Images/main_icon.png) no-repeat center 0;
+    height: 500px;
+}
+
+.label {
+    font-size: 18px;
+}
+
+#connectButtons {
+    width: 50%;
+    margin: 0 auto;
+}
+
+    #connectButtons table {
+        margin: 0 auto 1.5em;
+    }
+
+    #connectButtons table tr td.icon1 {
+        margin-top: 5px !important;
+    }
+
+    #connectButtons table tr td button {
+        margin: 0;
+        padding: 0;
+    }
+
+    #connectButtons td button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    #connectButtons button:link,
+    #connectButtons button:focus,
+    #connectButtons button:visited,
+    #connectButtons button:active,
+    #connectButtons button:hover {
+        border: none !important;
+        outline: 0 !important;
+    }
+
+    #connectButtons > div a {
+        display: block;
+        width: 60%;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+#regForm {
+    width: 80%;
+    margin: 0 auto;
+}
+
+    #regForm .label {
+        display: block;
+        float: left;
+        margin-top: 13px;
+        text-align: right;
+        width: 27%;
+    }
+
+    #regForm div:last-child {
+        text-align: center;
+    }
+
+    #regForm .role input {
+        margin-left: 27%;
+    }
+
+#registerButtons {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+    #registerButtons form {
+        display: table;
+        width: 100%;
+        margin-bottom: .5em;
+    }
+
+        #registerButtons form span {
+            display: block;
+        }
+
+        /*#registerButtons form input[type="Password"] {
+            margin-left: 5px;
+        }*/
+
+        #registerButtons form button {
+            margin-top: 10px;
+        }
+
+    #registerButtons > div {
+        position: relative;
+        padding: 5px 0;
+    }
+
+        #registerButtons > div span {
+            background: #181a1b;
+            position: absolute;
+            top: 0;
+            right: 50%;
+        }
+
+    #registerButtons > button {
+        margin-top: .5em;
+        background: none;
+        border: none;
+        color: #939494;
+        cursor: pointer;
+    }
+
+/* ---/ Registration --- */
+
+/*@media (min-width: 801px) {
+    #connectButtons table td.icon1 button {
+        background: url(../Images/linkedin.png);
+        height: 96px;
+        width: 99px;
+    }
+
+    #connectButtons table td.icon2 button {
+        background: url(../Images/fb.png);
+        height: 96px;
+        width: 99px;
+    }
+
+    #connectButtons table td.icon3 button {
+        background: url(../Images/twitter.png);
+        height: 96px;
+        width: 99px;
+    }
+
+    #connectButtons table td.icon4 button {
+        background: url(../Images/google.png);
+        height: 96px;
+        width: 99px;
+    }
+}*/
+
+#connectButtons table td.icon1 button {
+    background: url(../Images/linkedin.png);
+    height: 96px;
+    width: 99px;
+}
+
+#connectButtons table td.icon2 button {
+    background: url(../Images/fb.png);
+    height: 96px;
+    width: 99px;
+}
+
+#connectButtons table td.icon3 button {
+    background: url(../Images/twitter.png);
+    height: 96px;
+    width: 99px;
+}
+
+#connectButtons table td.icon4 button {
+    background: url(../Images/google.png);
+    height: 96px;
+    width: 99px;
+}
+
+#btnFacebook {
+    opacity: 0;
+}
+
+/* --- Registraion --- */ /** originally line 224 **/
+/*#connectButtons table {
+    margin: 0 auto 1.5em;
+}
+
+    #connectButtons table tr > td {
+        text-align: center;
+    }
+
+#connectButtons td button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#connectButtons button:link,
+#connectButtons button:focus,
+#connectButtons button:visited,
+#connectButtons button:active,
+#connectButtons button:hover {
+    border: none !important;
+    outline: 0 !important;
+}
+
+#connectButtons > div a {
+    padding: 10px 43px;
+}
+
+#regForm {
+    width: 80%;
+    margin: 0 auto;
+}
+
+    #regForm .label {
+        display: block;
+        float: left;
+        margin-top: 13px;
+        text-align: right;
+        width: 27%;
+    }
+
+    #regForm div:last-child {
+        text-align: center;
+    }*/ /** originally line 267 **/

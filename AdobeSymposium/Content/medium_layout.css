@@ -1,0 +1,55 @@
+﻿@media (min-width:501px) and (max-width:800px) {
+    .label {
+        font-size: 15px;
+    }
+
+    .icon_container {
+        background: url(../Images/main_icon_md.png) no-repeat center 0;
+        height: 450px;
+    }
+
+    #registerButtons input {
+        width: 70%;
+    }
+
+    #regForm {
+        width: 100%;
+    }
+
+        #regForm .role input {
+            margin-left: 27%;
+        }
+
+    #connectButtons {
+        width: 70%;
+    }
+
+
+    /*#connectButtons table td.icon1 button {
+        background: url(../Images/linkedin.png);
+        height: 96px;
+        width: 99px;
+    }
+
+    #connectButtons table td.icon2 button {
+        background: url(../Images/fb.png);
+        height: 96px;
+        width: 99px;
+    }
+
+    #connectButtons table td.icon3 button {
+        background: url(../Images/twitter.png);
+        height: 96px;
+        width: 99px;
+    }
+
+    #connectButtons table td.icon4 button {
+        background: url(../Images/google.png);
+        height: 96px;
+        width: 99px;
+    }*/
+}
+
+#btnFacebook {
+    opacity: 0;
+}

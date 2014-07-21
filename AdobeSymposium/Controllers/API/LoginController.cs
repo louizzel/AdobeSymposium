@@ -17,9 +17,9 @@ namespace AdobeSymposium.Controllers.API
         {
             var temp = (from table in entity.tblRegistrations1 where table.Email.Equals(email) select table.Id).FirstOrDefault();
             if ((from table in entity.tblRegistrations1 where table.Email.Equals(email) select table.Id).FirstOrDefault() == 0)
-                return "Are you sure you used the correct email?";
+                return "The email or password you entered is incorrect.";
             else if ((from table in entity.tblRegistrations1 where table.Email.Equals(email) && table.Password.Equals(password) select table.Id).FirstOrDefault() == 0)
-                return "Are you sure about your password?";
+                return "The email or password you entered is incorrect.";
             else
                 return "Ok." + entity.tblRegistrations1.Where(m => m.Email.Equals(email) && m.Password.Equals(password)).Select(m => m.Id).FirstOrDefault();
         }

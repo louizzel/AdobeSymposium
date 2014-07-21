@@ -1,0 +1,29 @@
+{
+	"user": {
+		"id": 		1000,
+		"name": 	"Lance Springfield",
+		"role": 	100,
+		"industry": 100,
+		"company": 	"Wunderman",
+		"img": 		"/Images/lance.jpg"
+	},
+
+	"filters": {
+
+		"industries": [
+			{ "id": 100, "name": "Meaningless Industry" },
+			{ "id": 101, "name": "Dummy Data Industry" },
+			{ "id": 102, "name": "Mockup Industry" }
+		],
+		
+		"roles": [
+			{ "id": 100, "name": "Analyst" },
+			{ "id": 101, "name": "Advertiser" },
+			{ "id": 102, "name": "Content Manager" },
+			{ "id": 103, "name": "Digital Marketing Pro" },
+			{ "id": 104, "name": "Marketing Executive" },
+			{ "id": 105, "name": "Content Publisher" },
+			{ "id": 106, "name": "Social Marketing Pro" }
+		]
+	}
+}

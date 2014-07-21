@@ -39,13 +39,38 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Hammock">
+      <HintPath>..\packages\TweetSharp-Unofficial.2.3.1.2\lib\4.0\Hammock.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqToTwitter.AspNet, Version=3.0.2.12655, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\linqtotwitter.3.0.2\lib\net45\LinqToTwitter.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqToTwitterPcl, Version=3.0.2.12654, Culture=neutral, PublicKeyToken=957107be965c25d9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\linqtotwitter.3.0.2\lib\net45\LinqToTwitterPcl.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MySql.Data, Version=6.6.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data.Entity, Version=6.6.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\TweetSharp-Unofficial.2.3.1.2\lib\4.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.22\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.Entity" />
@@ -53,6 +78,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.30506\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
@@ -70,13 +99,7 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http">
-    </Reference>
-    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
@@ -120,10 +143,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Tracing.4.0.0\lib\net40\System.Web.Http.Tracing.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.0\lib\net40\System.Web.Http.OData.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
@@ -135,6 +154,9 @@
     <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="TweetSharp">
+      <HintPath>..\packages\TweetSharp-Unofficial.2.3.1.2\lib\4.0\TweetSharp.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -164,13 +186,16 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\API\DropdownController.cs" />
     <Compile Include="Controllers\API\LoginController.cs" />
+    <Compile Include="Controllers\API\PeopleController.cs" />
     <Compile Include="Controllers\API\ProfileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\API\IndustryController.cs" />
     <Compile Include="Controllers\API\MatchesController.cs" />
     <Compile Include="Controllers\API\RegistrationController.cs" />
     <Compile Include="Controllers\API\RoleController.cs" />
+    <Compile Include="Controllers\TwitterController.cs" />
     <Compile Include="DB\AdobeDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -198,13 +223,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Industry.cs" />
+    <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\RegistrationForm.cs" />
-    <Compile Include="Models\Role.cs" />
+    <Compile Include="OAuth.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\app.css" />
+    <Content Include="Content\font\animation.css" />
+    <Content Include="Content\font\symp-icons-codes.css" />
+    <Content Include="Content\font\symp-icons.css" />
+    <Content Include="Content\font\symp-icons.svg" />
+    <Content Include="Content\main_layout.css" />
+    <Content Include="Content\medium_layout.css" />
+    <Content Include="Content\small_layout.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -289,36 +322,77 @@
       <DependentUpon>AdobeDB.edmx</DependentUpon>
       <LastGenOutput>AdobeDB.cs</LastGenOutput>
     </Content>
+    <Content Include="Images\avatar.png" />
+    <Content Include="Images\bg-me.png" />
+    <Content Include="Images\blue_shade.png" />
+    <Content Include="Images\default-orig.png" />
+    <Content Include="Images\default.png" />
+    <Content Include="Images\fb.png" />
+    <Content Include="Images\fb_sm.png" />
+    <Content Include="Images\google.png" />
+    <Content Include="Images\google_sm.png" />
+    <Content Include="Images\linkedin.jpg" />
+    <Content Include="Images\linkedin.png" />
+    <Content Include="Images\linkedin_sm.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\main_icon.png" />
+    <Content Include="Images\main_icon_md.png" />
+    <Content Include="Images\main_icon_sm.png" />
+    <Content Include="Images\plain.png" />
+    <Content Include="Images\sample-bg.png" />
+    <Content Include="Images\shape_1.png" />
+    <Content Include="Images\shape_1_sm.png" />
+    <Content Include="Images\shape_2.png" />
+    <Content Include="Images\shape_2_sm.png" />
+    <Content Include="Images\twitter.png" />
+    <Content Include="Images\twitter_sm.png" />
+    <Content Include="Markups\Profile.html" />
+    <Content Include="Markups\Event.html" />
     <Content Include="Scripts\connect.js" />
-    <Content Include="Scripts\plugins\angular-route.min.js.map" />
-    <Content Include="Scripts\plugins\angular.min.js.map" />
-    <None Include="Scripts\plugins\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\controllers.js" />
+    <Content Include="Scripts\directives.js" />
+    <Content Include="Scripts\gplus.js" />
+    <Content Include="Scripts\services.js" />
+    <Content Include="Scripts\vendor\angular-route.min.js.map" />
+    <Content Include="Scripts\vendor\angular.min.js.map" />
+    <Content Include="Content\font\symp-icons.eot" />
+    <Content Include="Content\font\symp-icons.ttf" />
+    <Content Include="Content\font\symp-icons.woff" />
+    <Content Include="data\lead.json" />
+    <Content Include="data\leads-1in-1ro.json" />
+    <Content Include="data\leads-1in-2ro.json" />
+    <Content Include="data\leads-2in-1ro.json" />
+    <Content Include="data\leads-2in-2ro.json" />
+    <Content Include="data\settings.json" />
+    <None Include="Properties\PublishProfiles\Adobe Symposium.pubxml" />
+    <None Include="Properties\PublishProfiles\ASTest.pubxml" />
+    <None Include="Scripts\vendor\jquery-1.8.2.intellisense.js" />
     <Content Include="Markups\Connect.html" />
-    <Content Include="Markups\Test.html" />
-    <Content Include="Markups\Login.html" />
     <Content Include="Markups\Register.html" />
     <Content Include="Markups\Index.html" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\linkedin.js" />
     <Content Include="Scripts\ngFacebook.js" />
-    <Content Include="Scripts\plugins\angular-route.js" />
-    <Content Include="Scripts\plugins\angular-route.min.js" />
-    <Content Include="Scripts\plugins\angular.js" />
-    <Content Include="Scripts\plugins\angular.min.js" />
-    <Content Include="Scripts\plugins\jquery-1.8.2.js" />
-    <Content Include="Scripts\plugins\jquery-1.8.2.min.js" />
-    <None Include="Scripts\plugins\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\plugins\jquery-ui-1.8.24.js" />
-    <Content Include="Scripts\plugins\jquery-ui-1.8.24.min.js" />
-    <Content Include="Scripts\plugins\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\plugins\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Scripts\plugins\jquery.validate.js" />
-    <Content Include="Scripts\plugins\jquery.validate.min.js" />
-    <Content Include="Scripts\plugins\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\plugins\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\plugins\knockout-2.2.0.debug.js" />
-    <Content Include="Scripts\plugins\knockout-2.2.0.js" />
-    <Content Include="Scripts\plugins\modernizr-2.6.2.js" />
+    <Content Include="Scripts\vendor\angular-route.js" />
+    <Content Include="Scripts\vendor\angular-route.min.js" />
+    <Content Include="Scripts\vendor\angular.js" />
+    <Content Include="Scripts\vendor\angular.min.js" />
+    <Content Include="Scripts\vendor\d3.min.js" />
+    <Content Include="Scripts\vendor\jquery-1.8.2.js" />
+    <Content Include="Scripts\vendor\jquery-1.8.2.min.js" />
+    <None Include="Scripts\vendor\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\vendor\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\vendor\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\vendor\jquery.scrollbar.min.js" />
+    <Content Include="Scripts\vendor\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\vendor\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\vendor\jquery.validate.js" />
+    <Content Include="Scripts\vendor\jquery.validate.min.js" />
+    <Content Include="Scripts\vendor\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\vendor\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\vendor\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\vendor\knockout-2.2.0.js" />
+    <Content Include="Scripts\vendor\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -341,14 +415,14 @@
     <Content Include="Images\orderedList7.png" />
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
-    <Content Include="Scripts\plugins\_references.js" />
+    <Content Include="Scripts\vendor\_references.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Retrieve.cshtml" />
-    <Content Include="Views\Home\Connect.cshtml" />
+    <Content Include="Views\Twitter\Index.cshtml" />
+    <Content Include="Views\Twitter\Connected.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -377,7 +451,7 @@
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>2438</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:40368/</IISUrl>
+          <IISUrl>http://localhost:8000/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -387,6 +461,11 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

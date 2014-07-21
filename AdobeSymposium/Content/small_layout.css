@@ -1,0 +1,115 @@
+﻿@media (min-width: 50px) and (max-width: 500px) {
+    header {
+        background: url(../Images/shape_1_sm.png) no-repeat left 0;
+        height: 150px;
+    }
+
+    footer {
+        background: url(../Images/shape_2_sm.png) no-repeat right 0;
+        height: 150px;
+    }
+
+    input, textarea {
+        width: 100%;
+    }
+
+    select {
+        min-width: 110%;
+    }
+
+    .text-danger {
+        padding-left: 8%;
+        font-size: .8em;
+    }
+
+    .icon_container {
+        background: url(../Images/main_icon_sm.png) no-repeat center 0;
+        height: 300px;
+    }
+
+    #regForm {
+        width: auto;
+        margin-bottom: 10px;
+    }
+
+        #regForm .label {
+            display: none;
+        }
+
+        #regForm input, #regForm textarea {
+            width: 80%;
+        }
+
+        #regForm select {
+            min-width: 85%;
+        }
+
+    #registerButtons input {
+        width: 90%;
+    }
+
+    #regForm .role input {
+        margin-left: 0;
+    }
+
+    #registerButtons form input[type="Password"] {
+        margin-left: 1px;
+    }
+
+    #registerButtons form button {
+        font-size: 14px;
+    }
+
+    #connectButtons h1 {
+        font-size: 1.5em;
+    }
+
+    #connectButtons {
+        width: 90%;
+    }
+
+        #connectButtons > div a {
+            font-size: 14px;
+            padding: 10px 55px;
+            width: 35%;
+        }
+
+    /*#connectButtons div:last-child a {
+        font-size: 14px;
+        padding: 5px 10px;
+    }*/
+
+    /*#connectButtons table td.icon1 {
+        background: url(../Images/linkedin_sm.png) no-repeat left 0;
+        height: 50px;
+        width: 50px;
+    }
+
+    #connectButtons table td.icon2 {
+        background: url(../Images/fb_sm.png) no-repeat left 0;
+        height: 50px;
+        width: 50px;
+    }
+
+    #connectButtons table td.icon3 {
+        background: url(../Images/twitter_sm.png) no-repeat left 0;
+        height: 50px;
+        width: 50px;
+    }
+
+    #connectButtons table td.icon4 {
+        background: url(../Images/google_sm.png) no-repeat left 0;
+        height: 50px;
+        width: 50px;
+    }*/
+}
+
+@media (max-width: 380px) {
+    #regForm select {
+        min-width: 89%;
+    }
+}
+
+#btnFacebook {
+    opacity: 0;
+}

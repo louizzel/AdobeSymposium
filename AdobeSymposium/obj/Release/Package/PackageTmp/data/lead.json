@@ -1,0 +1,19 @@
+{
+	"id": 		1001,
+	"name": 	"Matt Maher",
+	"img": 		"/Images/lance.jpg",
+
+	"role": 	103,
+	"industry": 103,
+	"company": 	"Wunderman International",
+	
+	"contact":	"+44 132 6547",
+	"email":	"bruce.springteen@email.com",
+
+	"social": [
+		{ "media": "gplus", 	"link": "http://www.plus.google.com/bruce.springteen" },
+		{ "media": "linkedin", 	"link": "http://www.linkedin.com/bruce.springteen" },
+		{ "media": "facebook", 	"link": "http://www.linkedin.com/bruce.springteen" },
+		{ "media": "twitter", 	"link": "http://www.linkedin.com/bruce.springteen" }
+	]
+}

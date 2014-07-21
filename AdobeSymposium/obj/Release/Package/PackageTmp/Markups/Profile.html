@@ -1,0 +1,127 @@
+﻿<!--<script src="/Scripts/index.js"></script>
+<script src="/Scripts/connect.js"></script>
+<button type="button" data-ng-click="UserLogout()">Log Out</button>
+
+<div>
+    <h4>User Details:</h4>
+    <img src="{{ user.ProfilePicture }}" alt="{{ user.FirstName  + user.LastName}}" />
+    <span>ID: {{ user.Id }}</span><br />
+    <span>First Name: {{ user.FirstName }}</span><br />
+    <span>Last Name: {{ user.LastName }}</span><br />
+    <span>Company: {{ user.Company }}</span><br />
+    <span>Email: {{ user.Email }}</span><br />
+    <span>Contact Number: {{ user.ContactNumber }}</span><br />
+    <span>Industry: {{ user.Industry }}</span><br />
+    <span>Role: {{ user.Role }}</span><br />
+    <span>Facebook: {{ user.Facebook }}</span><br />
+    <span>GPlus: {{ user.GPlus }}</span><br />
+    <span>LinkedIn: {{ user.LinkedIn }}</span><br />
+    <span>Twitter: {{ user.Twitter }}</span><br />
+</div>
+<div>
+    <h4>Filter by Roles</h4>
+    <label data-ng-repeat="role in roles">
+        <input type="checkbox" value="role.roleId" data-ng-checked="role.visible" data-ng-click="toggleSelectionRole(role)" />{{ role.roleName }}</label><br />
+    <span>{{ roles }}</span>
+</div>
+
+<div>
+    <h4>Filter by Industry</h4>
+    <label data-ng-repeat="industry in industries">
+        <input type="checkbox" value="industry.industryId" data-ng-checked="industry.visible" data-ng-click="toggleSelectionIndustry(industry)" />{{ industry.industryName }}</label>
+    <br />
+    <br />
+    <span>{{ industries }}</span>
+</div>
+<div>
+    <h4>All Users</h4>
+    <div data-ng-repeat="profile in user.users">
+        <button data-ng-show="findInRoles(profile.RoleId) && findInIndustries(profile.IndustryId)" data-ng-click="getProfileOfConnection(profile.Id)">{{profile}}</button>
+    </div>
+</div>
+
+<div>
+    <h4>Selected User</h4>
+    <span>{{ user.selectedUser }}</span>
+</div>-->
+
+
+<link rel="stylesheet" href="/Content/app.css"/>
+<link rel="stylesheet" href="/Content/font/symp-icons.css"/>
+<div id="main" ng-class="{ filtering:isFiltering, viewing:isViewing, loading:isLoading }">
+	
+	<section id="scene" ng-controller='sceneController'></section>
+	
+	<div class="overlay" ng-click="toggleState('all', false)">
+		
+	</div>
+	<section id="filters" class='roles' ng-controller='filterController' tabbed>
+		
+		<nav class="navbar fullwidth tabs">
+			<ul>
+				<li class='tab' data-target='#role'>ROLE</li>
+				<li class='tab' data-target='#industry'>INDUSTRY</li>
+			</ul>
+		</nav>
+
+		<div class="targets">
+			<div id="role" class='target'>
+				<div class="scrollbar-outer" scrollable>
+					<ul class="forms-list">
+
+						<li ng-repeat="role in filters().roles">
+							<input type="checkbox" name='' id="role-{{ role.id }}" ng-model='role.isSelected'/>
+							<label for="role-{{ role.id }}">{{ role.name }}</label>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+			<div id="industry" class='target'>
+				<div class="scrollbar-outer" scrollable>
+					<ul class="forms-list">
+
+						<li ng-repeat="industry in filters().industries">
+							<input type="checkbox" name='' id="industry-{{ industry.id }}" ng-model='industry.isSelected'/>
+							<label for="industry-{{ industry.id }}">{{ industry.name }}</label>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="actions text-centered">
+			<button class='btn btn-blue vertical-align' ng-click='findLeads()'>Find Leads</button>
+		</div>
+
+	</section>
+	
+	<section id="profile" ng-controller='profileController'>
+		<button class='btn icon btn-big btn-red close' ng-click="toggleState('viewing', false)"><i class="icon-close"></i></button>
+		<div class='content'>
+			<div class="avatar">
+				<img src="Images/avatar.png" alt="">
+			</div>
+			<hgroup class='details'>
+				<h1 class="name">{{ lead().name }}</h1>
+				<h2 class="subheading">{{ lead().company }} <br> {{ lead().role }}</h2>
+				<h4 class="subheading">{{ lead().contact }}</h4>
+			</hgroup>
+			<div class='contacts'>
+				<a href="mailto:{{ lead().email }}" class="btn icon btn-outline btn-white"><i class="icon-mail"></i></a>
+				<a ng-repeat="social in lead().social" 
+					href="{{social.link}}" class="btn icon btn-outline btn-white"><i class="icon-{{ social.media }}"></i></a>				
+			</div>
+		</div>
+
+	</section>
+
+	<section id="fragments">
+		<img src="Images/logo.png" alt="" class='logo'/>
+		<button class='btn icon btn-big btn-white filter-toggle' ng-click="toggleState('filtering', true)">
+			<i class="icon-filters"></i>
+		</button>
+	</section>
+	
+</div>

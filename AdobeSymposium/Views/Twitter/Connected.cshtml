@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Connected</title>
+    <script>
+        localStorage['socialMedia'] = 'T';
+        localStorage["firstName"] = '@TempData["FirstName"]';
+        localStorage["pictureUrl"] = '@TempData["ProfilePicture"]';
+        localStorage["twitter"] = '@TempData["ScreenName"]';
+        window.location = '/#/register';
+    </script>
+</head>
+<body>
+    <div>
+      Hey! @ViewBag.FirstName 
+    </div>
+</body>
+</html>

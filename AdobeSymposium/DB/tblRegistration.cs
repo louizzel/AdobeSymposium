@@ -28,5 +28,7 @@ namespace AdobeSymposium.DB
         public string GPlus { get; set; }
         public System.DateTime Timestamp { get; set; }
         public string Password { get; set; }
+        public string Facebook { get; set; }
+        public string OtherRole { get; set; }
     }
 }

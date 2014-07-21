@@ -46,36 +46,64 @@ namespace AdobeSymposium.Models
         [StringLength(30)]
         public string role { get; set; }
 
-        [DataType(DataType.EmailAddress)]
-        public string linkedIn { get; set; }
+        [StringLength(30)]
+        public string otherRole { get; set; }
 
-        [StringLength(50)]
-        public string twitter { get; set; }
+        [StringLength(254)]
+        public string facebook { get; set; }
 
-        [StringLength(50)]
-        [DataType(DataType.EmailAddress)]
+        [StringLength(254)]
         public string gPlus { get; set; }
 
+        [StringLength(254)]
+        public string linkedIn { get; set; }
+
+        [StringLength(254)]
+        public string twitter { get; set; }
+        
         public string profilePicture { get; set; }
 
         public tblRegistration Convert()
         {
             var temp = new tblRegistration();
-            temp.FirstName = this.firstName;
-            temp.LastName = this.lastName;
-            temp.Company = this.company;
-            temp.Email = this.email;
+            temp.FirstName = this.firstName.Trim();
+            temp.LastName = this.lastName.Trim();
+            temp.Company = this.company.Trim();
+            temp.Email = this.email.Trim();
             temp.Password = this.password;
             temp.ContactNumber = this.contactNumber;
             temp.Industry = int.Parse(this.industry);
             temp.Role = this.role.Trim();
+            temp.OtherRole = string.IsNullOrEmpty(this.otherRole) ? "" : this.otherRole.Trim();
+            temp.Facebook = this.facebook;
             temp.LinkedIn = this.linkedIn;
             temp.Twitter = this.twitter;
             temp.GPlus = this.gPlus;
-            temp.ProfilePicture = this.profilePicture;
+            
+            temp.ProfilePicture = string.IsNullOrEmpty(this.profilePicture) ? "/Images/default.png" : this.profilePicture;
             temp.Timestamp = DateTime.Now;
 
             return temp;
         }
+    }
+
+    public class Industry
+    {
+        public int industryId { get; set; }
+        public string industryName { get; set; }
+        public bool visible { get; set; }
+    }
+
+    public class Role
+    {
+        public int roleId { get; set; }
+        public string roleName { get; set; }
+        public bool visible { get; set; }
+    }
+
+    public class Dropdowns
+    {
+        public List<string> Industries { get; set; }
+        public List<string> Roles { get; set; }
     }
 }

@@ -30,10 +30,12 @@
           <Property Name="contact_number" Type="varchar" Nullable="false" MaxLength="30" />
           <Property Name="industry" Type="int" Nullable="false" />
           <Property Name="role" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="other_role" Type="varchar" MaxLength="30" />
           <Property Name="profile_picture" Type="text" />
+          <Property Name="gplus" Type="varchar" MaxLength="254" />
+          <Property Name="facebook" Type="varchar" MaxLength="254" />
           <Property Name="linkedin" Type="varchar" MaxLength="254" />
           <Property Name="twitter" Type="varchar" MaxLength="254" />
-          <Property Name="gplus" Type="varchar" MaxLength="254" />
           <Property Name="timestamp" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="tblroles">
@@ -77,6 +79,8 @@
           <Property Name="GPlus" Type="String" MaxLength="254" Unicode="false" FixedLength="false" />
           <Property Name="Timestamp" Type="DateTime" Nullable="false" />
           <Property Type="String" Name="Password" Nullable="false" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Facebook" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OtherRole" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tblRole">
           <Key>
@@ -102,6 +106,8 @@
           <EntitySetMapping Name="tblRegistrations1">
             <EntityTypeMapping TypeName="adobesymposiumdbModel.tblRegistration">
               <MappingFragment StoreEntitySet="tblregistration">
+                <ScalarProperty Name="OtherRole" ColumnName="other_role" />
+                <ScalarProperty Name="Facebook" ColumnName="facebook" />
                 <ScalarProperty Name="Password" ColumnName="password" />
                 <ScalarProperty Name="Id" ColumnName="registration_id" />
                 <ScalarProperty Name="FirstName" ColumnName="first_name" />

@@ -9,21 +9,24 @@ namespace AdobeSymposium
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/plugins/jquery-{version}.js"));
+                        "~/Scripts/vendor/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
-                        "~/Scripts/plugins/jquery-ui-{version}.js"));
+                        "~/Scripts/vendor/jquery-ui-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/plugins/jquery.unobtrusive*",
-                        "~/Scripts/plugins/jquery.validate*"));
+                        "~/Scripts/vendor/jquery.unobtrusive*",
+                        "~/Scripts/vendor/jquery.validate*"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/plugins/modernizr-*"));
+                        "~/Scripts/vendor/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                        "~/Content/main_layout.css",
+                        "~/Content/small_layout.css",
+                        "~/Content/medium_layout.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",
