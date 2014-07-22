@@ -14,7 +14,7 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 /* ngFacebook Start */
 app.config(function ($facebookProvider) {
-    $facebookProvider.setAppId(303989436445285);
+    $facebookProvider.setAppId(1458113911107457); //303989436445285 - test appId
 });
 /* ngFacebook End */
 

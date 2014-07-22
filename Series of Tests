@@ -40,7 +40,6 @@ Register
 			-[Fixed] [Added another field: passwordHash]
 		Logged in using LinkedIn, did not redirect back to the registration page but fields are populated
 
-
 Test in iPhone 4 Chrome
 	Login successful in Chrome
 	Cannot find balls in Profile page in Chrome
@@ -67,3 +66,16 @@ Test in Android Browser
 	OK Facebook Sign Up
 	OK Twitter Sign Up
 	OK Basic Registration Function
+
+Test in Android Chrome
+	OK Login
+	OK Profile
+	OK Leads
+	OK Selected Lead
+	OK LinkedIn Sign Up
+	OK GPlus Sign Up
+	OK Facebook Sign Up
+	OK Twitter Sign Up
+	OK Basic Registration Function
+
+	http://symposium.wundermanapac.com/#
