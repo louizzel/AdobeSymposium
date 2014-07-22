@@ -62,7 +62,7 @@ namespace AdobeSymposium.Controllers.API
         }
 
         //Retrieves the details of the user being selected
-        public SelectedLead Get(int id, string user)
+        public SelectedLead Get(int id, string userId)
         {
             var temp = (from table in _entity.tblRegistrations1
                 where table.Id == id
@@ -122,6 +122,7 @@ namespace AdobeSymposium.Controllers.API
                     };
                     result.social.Add(tempSocial);
                 }
+                return result;
             }
             
             return new SelectedLead();

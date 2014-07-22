@@ -14,11 +14,14 @@ function retrieveProfile(profile) {
     IN.API.Raw("/people/~/current-status").method("PUT")
     .body(JSON.stringify("This is just a test using my LinkedIn profile. Sorry for any inconvenience. "))
     .result(function (result) {
-    }).error(function (error) { console.log("Unable to post in your LinkedIn profile."); });
-
+    }).error(function (error) { 
+        //console.log("Unable to post in your LinkedIn profile."); 
+    });
+    
     members = profile;
     member = profile.values[0];
     console.log(member.firstName);
+    //alert(member.industry.replace('and', '&') + "\n" + member.siteStandardProfileRequest.url);
     localStorage["socialMedia"] = "L";
     localStorage["firstName"] = member.firstName;
     localStorage["headline"] = member.headline;
@@ -26,14 +29,14 @@ function retrieveProfile(profile) {
     localStorage["pictureUrl"] = member.pictureUrl;
     localStorage["industryName"] = member.industry.replace('and', '&');
     localStorage["linkedIn"] = member.siteStandardProfileRequest.url;
-    window.location = "/#/register";
+    location.href = "/#/register";
 }
 /* LinkedIn JavaScript API End */
 
 /* ngFacebook Start */
 function statusChangeCallback(response) {
-    console.log('statusChangeCallback  *connect.js');
-    console.log(response);
+    //console.log('statusChangeCallback  *connect.js');
+    //console.log(response);
     // The response object is returned with a status field that lets the
     // app know the current login status of the person.
     // Full docs on the response object can be found in the documentation
@@ -44,11 +47,11 @@ function statusChangeCallback(response) {
 
     } else if (response.status === 'not_authorized') {
         // The person is logged into Facebook, but not your app.
-        console.log('Please log into this app. *connect.js');
+        //console.log('Please log into this app. *connect.js');
     } else {
         // The person is not logged into Facebook, so we're not sure if
         // they are logged into this app or not.
-        console.log('Please log into Facebook. *connect.js');
+        //console.log('Please log into Facebook. *connect.js');
     }
 }
 
@@ -80,7 +83,6 @@ window.fbAsyncInit = function () {
 }(document, 'script', 'facebook-jssdk'));
 
 function testAPI() {
-    console.log('TestApi');
     FB.api('/me/feed', 'post', { message: "This is just a test using my Facebook profile. Sorry for any inconvenience. Time posted: " + new Date()/*"I'm at the Adobe Symposium. #AdobeSymp"*/ }, function (result) {
         console.log(result);
         FB.api('/me', function (response) {
@@ -90,13 +92,10 @@ function testAPI() {
             localStorage["facebook"] = response.link;
         });
         FB.api('/me/picture', function (response) {
-            console.log(response);
-            console.log(response.data);
-            console.log(response.data.url);
             localStorage["pictureUrl"] = response.data.url;
         },{scope: 'publish_actions'});
 
-        window.location = "/#/register";
+        location.href = "/#/register";
     });
 }
 /* ngFacebook End */
@@ -143,8 +142,7 @@ function signinCallback(authResult) {
                 localStorage["lastName"] = response.name.familyName;
                 localStorage["gPlus"] = response.url;
                 localStorage["pictureUrl"] = response.image.url.replace('sz=50', 'sz=100');
-                console.log('Retrieved profile for:' + response.displayName);
-                window.location = "/#/register";
+                location.href = "/#/register";
             });
         });
     } else {

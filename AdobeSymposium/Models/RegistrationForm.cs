@@ -30,6 +30,10 @@ namespace AdobeSymposium.Models
         [StringLength(254)]
         public string password { get; set; }
 
+        [Required]
+        [StringLength(254)]
+        public string passwordHash { get; set; }
+
         [StringLength(254)]
         public string confirmPassword { get; set; }
 
@@ -70,7 +74,7 @@ namespace AdobeSymposium.Models
             temp.LastName = this.lastName.Trim();
             temp.Company = this.company.Trim();
             temp.Email = this.email.Trim();
-            temp.Password = this.password;
+            temp.Password = this.passwordHash;
             temp.ContactNumber = this.contactNumber;
             temp.Industry = int.Parse(this.industry);
             temp.Role = this.role.Trim();

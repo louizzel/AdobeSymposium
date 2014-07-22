@@ -1,0 +1,69 @@
+Series of Tests
+
+Test in Desktop (Chrome, Firefox, Internet Explorer)
+Test in iPad (Chrome, Safari)
+Test in Mobile (iPhone Chrome, iPhone Safari, Android Chrome, Android Browser)
+
+Missing Functionalities:
+	Profile Page - Log out button
+
+Design Issues:
+	Profile Page - Role and Industry in Profile Page (long texts were cut)
+	Register Page - Dropdown forecolor
+
+Requirements:
+	Google Plus posting
+	Add Social Media Account in Registration Page
+	Edit Profile Page
+	Add Social Media Account in Edit Profile Page
+
+Connect	
+	Test in iPad Safari
+		Unable to sign up using Facebook due to invalid URL. Facebook does not accept IP Address as Website URL.
+		Signed up using Google Plus, did not redirect to Registration Page. G+ button disappeared after authentication.
+			-[Fixed] [Solution: used location.href instead of window.location, delayed redirect] 
+		Signed up using LinkedIn, did not redirect to Registration Page.
+		Signed up using Twitter, passed the authentication, stuck in /Twitter/Connected Page. Did not redirect to Registration page.
+			-[Fixed] [Solution: used location.href instead of window.location] 
+
+Register
+	Test in iPad Safari
+		UI Role is not in place.
+		UI Add css for disabled button
+		UI Display of Dropdown not readable
+		UI Placeholder should have a different shade
+		OK Logged in using Twitter
+		Error Message for Required Last Name did not show up
+
+	Test in iPad Chrome
+		Password is too long error after registration
+			-[Fixed] [Added another field: passwordHash]
+		Logged in using LinkedIn, did not redirect back to the registration page but fields are populated
+
+
+Test in iPhone 4 Chrome
+	Login successful in Chrome
+	Cannot find balls in Profile page in Chrome
+	FOUC in signup page in Chrome		
+	After LinkedIn Authorization, page does not close automatically but details have been successfully retrieved
+	After Google Plus Authorization, page does not close automatically and details have not been successfully retrieved
+	OK Twitter Authentication and Data Gather, can proceed with registration
+	OK Basic Registration Function
+
+Test in iPhone 4 Safari
+	Login Button not working
+	Create an Account not working
+	Went directly to Sign Up Page and logged in using Twitter. stuck in /Twitter/Connected Page. Did not redirect to Registration page.
+	Went directly to Sign Up Page and logged in using LinkedIn. stuck in LinkedIn Processing Page. Did not redirect to Registration page.
+	Went directly to Sign Up Page and logged in using Google Plus. Redirected back to the Sign Up Page but GPlus icon disappeared. No data gathered as well.
+	Filled up the form, clicked the Register button, user has been registered but did not redirect to profile page.
+
+Test in Android Browser
+	OK Login
+	OK Profile
+	OK Leads
+	OK Selected Lead
+	OK GPlus Sign Up
+	OK Facebook Sign Up
+	OK Twitter Sign Up
+	OK Basic Registration Function

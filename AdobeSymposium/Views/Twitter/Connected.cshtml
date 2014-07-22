@@ -13,12 +13,12 @@
         localStorage["firstName"] = '@TempData["FirstName"]';
         localStorage["pictureUrl"] = '@TempData["ProfilePicture"]';
         localStorage["twitter"] = '@TempData["ScreenName"]';
-        window.location = '/#/register';
+        location.href = '/#/register';
     </script>
 </head>
 <body>
     <div>
-      Hey! @ViewBag.FirstName 
+      Hey @TempData["FirstName"]! Click <a href="/#/register">If you are not automatically redirected back to the Sign Up Page.</a>
     </div>
 </body>
 </html>

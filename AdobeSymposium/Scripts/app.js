@@ -104,9 +104,7 @@ app.controller('IndexController', function ($scope, $http) {
                 if (result.indexOf("Ok.") > -1) {
                     var temp = result.split(".");
                     localStorage["user_id"] = temp[1];
-                    $('header').show();
-                    $('footer').show();
-                    window.location = '#/profile';
+                    location.href = '/#/profile';
                 } else {
                     $scope.login.error = result;
                 }
@@ -119,7 +117,7 @@ app.controller('IndexController', function ($scope, $http) {
 
     $scope.userRegister = function () {
         localStorage["firstLoad"] = 0;
-        window.location = '/#/signup';
+        location.href = '/#/signup';
     };
 });
 
@@ -210,7 +208,6 @@ app.controller('ProfileController', function ($scope, $http) {
     }
 
     $scope.UserLogout = function () {
-        console.log('Log out');
         localStorage.clear();
 
         IN.User.logout($scope.UserLogout2, window);
@@ -226,7 +223,7 @@ app.controller('ProfileController', function ($scope, $http) {
         });
 
         $scope.active = false;
-        window.location = '/#/';
+        location.href = '/#/';
     };
 });
 
@@ -263,8 +260,8 @@ app.controller('RegistrationController', function ($scope, $http) {
                 firstName: localStorage['firstName'],
                 lastName: localStorage["lastName"],
                 profilePicture: localStorage["pictureUrl"],
-                company: localStorage["headline"].split("at")[1],
-                role: localStorage["headline"].split("at")[0].trim(),
+                company: localStorage["headline"].split("at ")[1],
+                role: localStorage["headline"].split("at ")[0].trim(),
                 linkedIn: localStorage["linkedIn"],
                 industry: 1,
                 ranOne: Math.floor((Math.random() * 10) + 1),
@@ -320,9 +317,9 @@ app.controller('RegistrationController', function ($scope, $http) {
                 method: 'GET', url: '/api/registration', params: { email: $scope.user.email }
             }).success(function (feedback) {
                 if (feedback == 0)
-                    $scope.emailCheck = true;
+                    $scope.emailCheck = true; //email is unique
                 else
-                    $scope.emailCheck = false;
+                    $scope.emailCheck = false; //email is not unique
                 console.log($scope.emailCheck);
             }).error(function (err) {
                 console.log('Error occurred. ' + err);
@@ -332,20 +329,22 @@ app.controller('RegistrationController', function ($scope, $http) {
 
     $scope.registerUser = function (isValid) {
         if (isValid) {
-            if ($scope.user.ranAns == ($scope.user.ranOne + $scope.user.ranTwo)) {
-                if ($scope.user.password === $scope.user.confirmPassword) {
-                    $scope.user.password = CryptoJS.SHA1($scope.user.confirmPassword).toString();
-                    $scope.user.confirmPassword = null;
-                    console.log($scope.user.password);
-                    $http.post('/api/registration', $scope.user).success(function (feedback) {
-                        if (feedback > 0) {
-                            localStorage["user_id"] = feedback;
-                            window.location = '/#/profile';
-                        }
-                    }).error(function (err) {
-                        console.log('Error occurred during form submission. ' + err);
-                    });
+            if ($scope.emailChecker()) {
+                if ($scope.user.ranAns == ($scope.user.ranOne + $scope.user.ranTwo)) {
+                    if ($scope.user.password === $scope.user.confirmPassword) {
+                        $scope.user.passwordHash = CryptoJS.SHA1($scope.user.confirmPassword).toString();
+                        $http.post('/api/registration', $scope.user).success(function(feedback) {
+                            if (feedback > 0) {
+                                localStorage["user_id"] = feedback;
+                                location.href = '/#/profile';
+                            }
+                        }).error(function(err) {
+                            console.log('Error occurred during form submission. ' + err);
+                        });
+                    }
                 }
+            } else {
+                
             }
         }
     };
