@@ -14,7 +14,7 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 /* ngFacebook Start */
 app.config(function ($facebookProvider) {
-    $facebookProvider.setAppId(303989436445285);
+    $facebookProvider.setAppId(303989436445285); //1458113911107457 - liveKey, 303989436445285 - testKey
 });
 /* ngFacebook End */
 
@@ -105,6 +105,7 @@ app.controller('IndexController', function ($scope, $http) {
                     var temp = result.split(".");
                     localStorage["user_id"] = temp[1];
                     location.href = '/#/profile';
+                    window.location = '/#/profile';
                 } else {
                     $scope.login.error = result;
                 }
@@ -118,6 +119,7 @@ app.controller('IndexController', function ($scope, $http) {
     $scope.userRegister = function () {
         localStorage["firstLoad"] = 0;
         location.href = '/#/signup';
+        window.location = '/#/signup';
     };
 });
 
@@ -224,6 +226,7 @@ app.controller('ProfileController', function ($scope, $http) {
 
         $scope.active = false;
         location.href = '/#/';
+        window.location = '/#/';
     };
 });
 
@@ -232,12 +235,30 @@ app.controller('ConnectController', function ($scope, $http) {
         localStorage["firstLoad"] = 1;
         location.reload();
     }
+
+    $scope.skipThisStep = function() {
+        localStorage["firstLoad"] = 0;
+        location.href = '/#/register';
+        window.location = '/#/register';
+    }
+
+    $scope.toTwitter = function() {
+        window.location = '/twitter';
+        location.href = '/twitter';
+    }
 });
 
 app.controller('RegistrationController', function ($scope, $http) {
+
+    if (localStorage["firstLoad"] == 0) {
+        localStorage["firstLoad"] = 1;
+        location.reload();
+    }
+
     $scope.user = {};
     $scope.industryList = [];
     $scope.emailCheck = true;
+
 
     $scope.getDropdownList = function () {
         $http({
@@ -288,7 +309,6 @@ app.controller('RegistrationController', function ($scope, $http) {
                 ranTwo: Math.floor((Math.random() * 10) + 1)
             };
         } else if (localStorage['socialMedia'] == 'T') {
-            console.log('It Works!');
             $scope.user = {
                 firstName: localStorage['firstName'],
                 lastName: localStorage["lastName"],
@@ -328,23 +348,31 @@ app.controller('RegistrationController', function ($scope, $http) {
     };
 
     $scope.registerUser = function (isValid) {
+        //var isUnique = $scope.emailChecker();
         if (isValid) {
-            if ($scope.emailChecker()) {
+            //if (isUnique) {
                 if ($scope.user.ranAns == ($scope.user.ranOne + $scope.user.ranTwo)) {
                     if ($scope.user.password === $scope.user.confirmPassword) {
                         $scope.user.passwordHash = CryptoJS.SHA1($scope.user.confirmPassword).toString();
-                        $http.post('/api/registration', $scope.user).success(function(feedback) {
+
+                        $scope.user.linkedIn = $scope.user.linkedIn == undefined ? localStorage["linkedIn"] : $scope.user.linkedIn;
+                        $scope.user.facebook = $scope.user.linkedIn == undefined ? localStorage["facebook"] : $scope.user.facebook;
+                        $scope.user.twitter = $scope.user.twitter == undefined ? localStorage["twitter"] : $scope.user.twitter;
+                        $scope.user.gPlus = $scope.user.gPlus == undefined ? localStorage["gPlus"] : $scope.user.gPlus;
+                        
+                        $http.post('/api/registration', $scope.user).success(function (feedback) {
                             if (feedback > 0) {
                                 localStorage["user_id"] = feedback;
                                 location.href = '/#/profile';
+                                window.location = '/#/profile';
                             }
-                        }).error(function(err) {
+                        }).error(function (err) {
                             console.log('Error occurred during form submission. ' + err);
                         });
                     }
-                }
+                //}
             } else {
-                
+                $scope.emailCheck = false;
             }
         }
     };

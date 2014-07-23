@@ -1,104 +1,120 @@
-﻿<link rel="stylesheet" href="/Content/main_layout.css"/>
-<link rel="stylesheet" href="/Content/small_layout.css"/>
-<link rel="stylesheet" href="/Content/medium_layout.css"/>
-<div class="container">
-    <header></header>
-    <section class="content">
-        <div class="content-body">
-            <form id="regForm" name="userForm" data-ng-submit="registerUser(userForm.$valid)" novalidate>
-                <div>
-                    <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
-                        <label class="label" for="Email">Email:</label>
-                        <input type="email" name="email" class="form-control" data-ng-model="user.email" placeholder="Email" data-ng-model-options="{ debounce: 1000 }" data-ng-minlength="1" data-ng-maxlength="254" data-ng-required="true" data-ng-unique="tableDB.userDBField" data-ng-focus />
-                        <div data-ng-show="userForm.email.$error.required && userForm.email.$dirty" class="text-danger left">Please enter your email address.</div>
-                        <div data-ng-show="userForm.email.$error.email && !userForm.email.$pristine" class="text-danger left">Enter a valid email.</div>
-                        <div data-ng-show="userForm.email.$error.unique && !userForm.email.$pristine" class="text-danger left">Email is already registered.</div>
-                    </div>
+﻿<link href="Content/main_layout.css" rel="stylesheet" />
+<link rel="stylesheet" href="/Content/app.css" />
+<div id="main">
+    <div class="main reg_container reg">
+        <form id="regForm" name="userForm" data-ng-submit="registerUser(userForm.$valid)" novalidate>
+            <div>
+                <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+                    <label class="label" for="Email">Email:</label>
+                    <input type="email" name="email" class="form-control unit-60" data-ng-model="user.email" placeholder="Email" data-ng-model-options="{ debounce: 1000 }" data-ng-minlength="1" data-ng-maxlength="254" data-ng-required="true" data-ng-unique="tableDB.userDBField" data-ng-focus />
+                    <div data-ng-show="userForm.email.$error.required && userForm.email.$dirty" class="text-danger">Please enter your email address.</div>
+                    <div data-ng-show="userForm.email.$error.email && !userForm.email.$pristine" class="text-danger">Enter a valid email.</div>
+                    <div data-ng-show="userForm.email.$error.unique && !userForm.email.$pristine" class="text-danger">Email is already registered.</div>
+                </div>
 
-                    <div class="form-group">
-                        <label class="label" for="Password">Password:</label>
-                        <input class="form-control" type="password" name="password" placeholder="Password" data-ng-model="user.password" data-ng-minlength="6" data-ng-maxlength="30" data-ng-required="true" />
-                        <div data-ng-show="userForm.password.$error.minlength" class="text-danger left">Password should be at least 6 characters long.</div>
-                        <div data-ng-show="userForm.password.$error.maxlength" class="text-danger left">Password is too long!</div>
-                    </div>
+                <div class="form-group">
+                    <label class="label" for="Password">Password:</label>
+                    <input class="form-control unit-60" type="password" name="password" placeholder="Password" data-ng-model="user.password" data-ng-minlength="6" data-ng-maxlength="30" data-ng-required="true" />
+                    <div data-ng-show="userForm.password.$error.minlength" class="text-danger">Password should be at least 6 characters long.</div>
+                    <div data-ng-show="userForm.password.$error.maxlength" class="text-danger">Password is too long!</div>
+                </div>
 
-                    <div class="form-group">
-                        <label class="label" for="confirmPassword">Confirm Password:</label>
-                        <input class="form-control" type="password" name="confirmPassword" placeholder="Confirm password" data-ng-model="user.confirmPassword" data-ng-minlength="6" data-ng-maxlength="30" data-ng-required="true" />
-                        <div data-ng-show="user.password != user.confirmPassword && !userForm.confirmPassword.$pristine" class="text-danger left">Passwords do not match.</div>
-                    </div>
+                <div class="form-group">
+                    <label class="label" for="confirmPassword">Confirm Password:</label>
+                    <input class="form-control unit-60" type="password" name="confirmPassword" placeholder="Confirm password" data-ng-model="user.confirmPassword" data-ng-minlength="6" data-ng-maxlength="30" data-ng-required="true" />
+                    <div data-ng-show="user.password != user.confirmPassword && !userForm.confirmPassword.$pristine" class="text-danger">Passwords do not match.</div>
+                </div>
 
-                    <div class="form-group" data-ng-class="{ 'has-error' : user.firstName.$invalid }">
-                        <label class="label" for="firstName">First Name:</label>
-                        <input class="form-control" type="text" name="firstName" placeholder="First Name" data-ng-model="user.firstName" data-ng-minlength="1" data-ng-maxlength="30" data-ng-required="true" value="{{user.firstName}}" />
-                        <div data-ng-show="userForm.firstName.$error.required && !userForm.firstName.$pristine" class="text-danger">Please enter your first name.</div>
-                        <div data-ng-show="userForm.firstName.$error.maxlength" class="text-danger">Heck! What a long name!</div>
-                    </div>
+                <div class="form-group" data-ng-class="{ 'has-error' : user.firstName.$invalid }">
+                    <label class="label" for="firstName">First Name:</label>
+                    <input class="form-control unit-60" type="text" name="firstName" placeholder="First Name" data-ng-model="user.firstName" data-ng-minlength="1" data-ng-maxlength="30" data-ng-required="true" value="{{user.firstName}}" />
+                    <div data-ng-show="userForm.firstName.$error.required && !userForm.firstName.$pristine" class="text-danger">Please enter your first name.</div>
+                    <div data-ng-show="userForm.firstName.$error.maxlength" class="text-danger">Heck! What a long name!</div>
+                </div>
 
-                    <div class="form-group">
-                        <label class="label" for="lastName">Last Name:</label>
-                        <input class="form-control" type="text" name="lastName" placeholder="Last Name" data-ng-model="user.lastName" data-ng-minlength="1" data-ng-maxlength="30" data-ng-required="true" />
-                        <div data-ng-show="userForm.lastName.$error.required && !userForm.lastName.$pristine" class="text-danger">Please enter your last name.</div>
-                        <div data-ng-show="userForm.lastName.$error.maxlength" class="text-danger">That's a long name!</div>
-                    </div>
+                <div class="form-group">
+                    <label class="label" for="lastName">Last Name:</label>
+                    <input class="form-control unit-60" type="text" name="lastName" placeholder="Last Name" data-ng-model="user.lastName" data-ng-minlength="1" data-ng-maxlength="30" data-ng-required="true" />
+                    <div data-ng-show="userForm.lastName.$error.required && !userForm.lastName.$pristine" class="text-danger">Please enter your last name.</div>
+                    <div data-ng-show="userForm.lastName.$error.maxlength" class="text-danger">That's a long name!</div>
+                </div>
 
-                    <div class="form-group">
-                        <label class="label" for="companyName">Company Name:</label>
-                        <input class="form-control" type="text" name="companyName" placeholder="Company Name" data-ng-model="user.company" data-ng-minlength="1" data-ng-maxlength="100" data-ng-required="true" />
-                        <div data-ng-show="userForm.companyName.$error.required && !userForm.companyName.$pristine" class="text-danger">What company do you work for?</div>
-                        <div data-ng-show="userForm.companyName.$error.maxlength" class="text-danger">That's a long name!</div>
-                    </div>
+                <div class="form-group">
+                    <label class="label" for="companyName">Company Name:</label>
+                    <input class="form-control unit-60" type="text" name="companyName" placeholder="Company Name" data-ng-model="user.company" data-ng-minlength="1" data-ng-maxlength="100" data-ng-required="true" />
+                    <div data-ng-show="userForm.companyName.$error.required && !userForm.companyName.$pristine" class="text-danger">What company do you work for?</div>
+                    <div data-ng-show="userForm.companyName.$error.maxlength" class="text-danger">That's a long name!</div>
+                </div>
 
-                    <div class="form-group">
-                        <label class="label" for="contactNumber">Contact Number:</label>
-                        <input class="form-control" type="text" name="contactNumber" placeholder="Contact Number" data-ng-model="user.contactNumber" data-ng-minlength="1" data-ng-maxlength="30" data-ng-required="true" />
-                        <div data-ng-show="userForm.contactNumber.$error.required && !userForm.contactNumber.$pristine" class="text-danger left">Please enter your contact number.</div>
-                    </div>
+                <div class="form-group">
+                    <label class="label" for="contactNumber">Contact Number:</label>
+                    <input class="form-control unit-60" type="text" name="contactNumber" placeholder="Contact Number" data-ng-model="user.contactNumber" data-ng-minlength="1" data-ng-maxlength="30" data-ng-required="true" />
+                    <div data-ng-show="userForm.contactNumber.$error.required && !userForm.contactNumber.$pristine" class="text-danger">Please enter your contact number.</div>
+                </div>
 
-                    <div class="form-group">
-                        <label class="label" for="Industry">Industry:</label>
-                        <select id="Industry" placeholder="Industry" data-ng-model="user.industry" data-ng-options="ind for ind in industryList" data-ng-required="true">
-                            <option value="">Please select your industry</option>
-                        </select>
-                    </div>
+                <div class="form-group">
+                    <label class="label" for="Industry">Industry:</label>
+                    <select id="Industry" class="unit-60" placeholder="Industry" data-ng-model="user.industry" data-ng-options="ind for ind in industryList" data-ng-required="true">
+                        <option value="">Please select your industry</option>
+                    </select>
+                </div>
 
-                    <div class="form-group role">
-                        <label class="label" for="Role">Role:</label>
-                        <select id="Role" data-ng-model="user.role" data-ng-options="ro for ro in roleList" data-ng-required="true">
-                            <option value="">Please select your job function</option>
-                        </select>
-                        <!--<label class="label"></label>-->
-                        <input type="text" data-ng-model="user.otherRole" data-ng-show="user.role == 'Others'" data-ng-maxlength="30" />
-                    </div>
+                <div class="form-group role">
+                    <label class="label" for="Role">Role:</label>
+                    <select id="Role" class="unit-60" data-ng-model="user.role" data-ng-options="ro for ro in roleList" data-ng-required="true">
+                        <option value="">Please select your job function</option>
+                    </select>
+                    <label class="label"></label>
+                    <input type="text" class="unit-60" data-ng-model="user.otherRole" data-ng-show="user.role == 'Others'" data-ng-maxlength="30" />
+                </div>
 
-                    <div class="form-group">
-                        <label class="label" for="picture">Picture:</label>
-                        <img src="{{ user.profilePicture }}" alt="{{ user.firstName + ' ' + user.lastName }}" />
-                    </div>
+                <div class="form-group">
+                    <label class="label" for="picture">Picture:</label>
+                    <img class="img" src="{{ user.profilePicture }}" alt="{{ user.firstName + ' ' + user.lastName }}" />
+                </div>
 
-                    <div class="form-group">
-                        <label class="label" for="ranAnswer">Spam check: {{user.ranOne + ' + ' + user.ranTwo}} =</label>
-                        <input class="form-control" type="text" name="ranAnswer" placeholder="{{user.ranOne + ' + ' + user.ranTwo}}" data-ng-model="user.ranAns" data-ng-minlength="1" data-ng-required="true" data-ng-blur="spamChecker()" />
-                        <div data-ng-show="!spamError && userForm.ranAnswer.$error.required && !userForm.ranAnswer.$pristine" class="text-danger">We need to know if you're human :)</div>
-                        <div data-ng-show="spamError && userForm.ranAnswer.$dirty" class="text-danger left">Math doesn't suck, you do.</div>
-                    </div>
+                <div class="form-group">
+                    <label class="label" for="ranAnswer">Spam check: {{user.ranOne + ' + ' + user.ranTwo}} =</label>
+                    <input class="form-control" type="text" name="ranAnswer" placeholder="{{user.ranOne + ' + ' + user.ranTwo}}" data-ng-model="user.ranAns" data-ng-minlength="1" data-ng-required="true" data-ng-blur="spamChecker()" />
+                    <div data-ng-show="!spamError && userForm.ranAnswer.$error.required && !userForm.ranAnswer.$pristine" class="text-danger">We need to know if you're human :)</div>
+                    <div data-ng-show="spamError && userForm.ranAnswer.$dirty" class="text-danger left">Math doesn't suck, you do.</div>
+                </div>
 
-                    <!-- <input type="text" id="LinkedIn" placeholder="LinkedIn Profile" data-ng-model="user.linkedIn" />
+                <!-- <input type="text" id="LinkedIn" placeholder="LinkedIn Profile" data-ng-model="user.linkedIn" />
         <input type="text" id="Twitter" placeholder="Twitter" data-ng-model="user.twitter" />
         <input type="text" id="GPlus" placeholder="Google Plus" data-ng-model="user.gPlus" />
         <input type="text" id="Facebook" placeholder="Facebook" data-ng-model="user.facebook" />-->
-                    <br />
+                <br />
+                <label class="label"></label>
+                <!--<ul>
+                    <li>
+                        <span style="opacity: 0;">
+                            <script type="in/Login"></script>
+                        </span>
+                    </li>
+                    <li>
+                        <button id="btnFacebookConnect">
+                            <fb:login-button id="btnFacebook" scope="publish_actions,public_profile,email" size="xlarge" onlogin="checkLoginState();"></fb:login-button>
+                        </button>
+                    </li>
+                    <li><a href="#">
+                        <img src="../Images/twitter_sm.png" alt="" /></a></li>
+                    <li><a href="#">
+                        <img src="../Images/google_sm.png" alt="" /></a></li>
+                </ul>-->
+                <div style="clear: both"></div>
+                <div class="text-centered">
                     <label class="label"></label>
-                    <button type="submit" class="btn btn-default btn-lg raleway" data-ng-disabled="userForm.$invalid || (user.ranAns != (user.ranOne + user.ranTwo)) || (user.password != user.confirmPassword)">REGISTER</button>
-
-                    <!--For form validation-->
-                    <!--http://blog.brunoscopelliti.com/form-validation-the-angularjs-way-->
-                    <!--http://scotch.io/tutorials/javascript/angularjs-form-validation-->
-                    <!--http://jsfiddle.net/adamdbradley/Qdk5M/-->
-                    <!--https://docs.angularjs.org/guide/forms-->
+                    <div class="submit">
+                        <button type="submit" class="btn btn-big" data-ng-disabled="userForm.$invalid || (user.ranAns != (user.ranOne + user.ranTwo)) || (user.password != user.confirmPassword)">REGISTER</button>
+                    </div>
                 </div>
-            </form>
-        </div>
-    </section>
-    <footer></footer>
+                <!--For form validation-->
+                <!--http://blog.brunoscopelliti.com/form-validation-the-angularjs-way-->
+                <!--http://scotch.io/tutorials/javascript/angularjs-form-validation-->
+                <!--http://jsfiddle.net/adamdbradley/Qdk5M/-->
+                <!--https://docs.angularjs.org/guide/forms-->
+            </div>
+        </form>
+    </div>
 </div>

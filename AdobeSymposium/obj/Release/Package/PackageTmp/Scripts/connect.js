@@ -30,28 +30,16 @@ function retrieveProfile(profile) {
     localStorage["industryName"] = member.industry.replace('and', '&');
     localStorage["linkedIn"] = member.siteStandardProfileRequest.url;
     location.href = "/#/register";
+    window.location = "/#/register";
 }
 /* LinkedIn JavaScript API End */
 
 /* ngFacebook Start */
 function statusChangeCallback(response) {
-    //console.log('statusChangeCallback  *connect.js');
-    //console.log(response);
-    // The response object is returned with a status field that lets the
-    // app know the current login status of the person.
-    // Full docs on the response object can be found in the documentation
-    // for FB.getLoginStatus().
     if (response.status === 'connected') {
-        // Logged into your app and Facebook.
         testAPI();
-
     } else if (response.status === 'not_authorized') {
-        // The person is logged into Facebook, but not your app.
-        //console.log('Please log into this app. *connect.js');
     } else {
-        // The person is not logged into Facebook, so we're not sure if
-        // they are logged into this app or not.
-        //console.log('Please log into Facebook. *connect.js');
     }
 }
 
@@ -63,7 +51,7 @@ function checkLoginState() {
 
 window.fbAsyncInit = function () {
     FB.init({
-        appId: '303989436445285',
+        appId: '303989436445285', // 1458113911107457 - liveKey, 303989436445285 - testKey
         cookie: true, // enable cookies to allow the server to access the session
         xfbml: true, // parse social plugins on this page
         version: 'v2.0' // use version 2.0
@@ -96,6 +84,7 @@ function testAPI() {
         },{scope: 'publish_actions'});
 
         location.href = "/#/register";
+        window.location = "/#/register";
     });
 }
 /* ngFacebook End */
@@ -143,14 +132,10 @@ function signinCallback(authResult) {
                 localStorage["gPlus"] = response.url;
                 localStorage["pictureUrl"] = response.image.url.replace('sz=50', 'sz=100');
                 location.href = "/#/register";
+                window.location = "/#/register";
             });
         });
     } else {
-        // Update the app to reflect a signed out user
-        // Possible error values:
-        //   "user_signed_out" - User is signed-out
-        //   "access_denied" - User denied access to your app
-        //   "immediate_failed" - Could not automatically log in the user
         console.log('Sign-in state: ' + authResult['error']);
     }
 }
@@ -162,11 +147,3 @@ function signinCallback(authResult) {
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 })();
 /* Google Plus End */
-
-//$('document').ready(function() {
-//    setTimeout(function () {
-//        if (($('span.IN-widget').length <= 0) && ($('span._4z_f').length <= 0)) {
-//            location.reload();
-//        }
-//    }, 3000);
-//});

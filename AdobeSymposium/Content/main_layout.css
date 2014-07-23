@@ -1,358 +1,111 @@
 ﻿@import url(http://fonts.googleapis.com/css?family=Raleway:500);
 
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    background: #c0c0c0;
-    color: #939494;
-    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif !important;
 }
 
-header, footer, hgroup,
-nav, section {
-    display: block;
+.container {
+    margin: 0 auto;
 }
 
-h1, h2, h3,
-h4, h5, h6 {
-    color: #939494;
-    margin-bottom: .5em;
-    padding-bottom: 0;
+.main.container {
+    padding: 1.5em;
 }
 
-h1 {
-    font-size: 2em;
+ul {
+    list-style: none;
 }
 
-h2 {
-    font-size: 1.75em;
-}
-
-h3 {
-    font-size: 1.2em;
-}
-
-h4 {
-    font-size: 1.1em;
-}
-
-h5, h6 {
-    font-size: 1em;
-}
-
-a {
-    color: #939494;
-    outline: none;
-    text-decoration: none;
-}
-
-    a:link, a:visited,
-    a:active, a:hover {
-        /*color: #333;*/
+    ul li {
+        display: inline;
     }
 
-    a:hover {
-        /*background-color: #c7d1d6;*/
+    ul > li {
+        padding-left: 10px;
     }
 
-.pull-right {
-    float: right !important;
-}
-
-.pull-left {
-    float: left !important;
-}
-
-.center {
+.main_header {
     text-align: center;
+    font-weight: normal;
+    font-family: 'Raleway', sans-serif;
 }
 
-.left {
-    text-align: left !important;
-}
-
-.right {
-    text-align: right;
-}
-
-hr {
-    color: #d9d9d9;
-    background-color: #d9d9d9;
-    height: 1px;
-    border: none;
-}
-
-.btn {
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-}
-
-.btn-default {
-    border-color: #afafb0;
-    color: #939494;
-    background: none;
-}
-
-    .btn-default:hover,
-    .btn-default:focus,
-    .btn-default:active {
-        outline: none;
+    .main_header h1 {
+        color: #3892ba;
+        font-weight: normal;
     }
-
-.btn-lg {
-    padding: 10px 15px;
-    font-size: 18px;
-    line-height: 1.33;
-}
-
-input, textarea, select {
-    border: 1px solid #afafb0;
-    background: #1a1a1c;
-    box-shadow: none;
-    color: #939494;
-    font-size: .8em;
-    margin: 5px 0;
-    padding: 10px;
-    width: 50%;
-}
-
-select {
-    width: 53%;
-}
-
-.text-danger {
-    padding-left: 37%;
-    text-align: left;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #d44950;
-}
-
-.help-block {
-    padding-left: 37%;
-    text-align: left;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #f0ad4e;
-}
-
-.alert-warning {
-    color: #31708f;
-}
 
 .raleway {
     font-weight: normal;
     font-family: 'Raleway', sans-serif;
-    margin-top: 0;
 }
-
-.hide {
-    display: none;
-}
-
-/* --- body --- */
-header {
-    background: url(../Images/shape_1.png) no-repeat left 0;
-    height: 244px;
-}
-
-.container {
-    background-color: #181a1b;
-    background-image: url(../Images/blue_shade.png);
-    background-repeat: no-repeat;
-    background-position: 100% 0;
-    display: table;
-    height: 100%;
-    width: 100%;
-    max-width: 980px;
-    margin: 0 auto;
-}
-
-.content {
-    display: table-row;
-    height: 100%;
-}
-
-.content-body {
-    display: table-cell;
-    vertical-align: middle;
-    padding: 15px;
-}
-
-
-footer {
-    background: url(../Images/shape_2.png) no-repeat right 0;
-    height: 208px;
-}
-/* ---/ body --- */
-
-.mega-hdr {
-    margin-bottom: 25px;
-}
-
-    .mega-hdr h1 {
-        color: #3892ba;
-    }
 
 .icon_container {
     background: url(../Images/main_icon.png) no-repeat center 0;
     height: 500px;
 }
 
-.label {
-    font-size: 18px;
+
+input[type="text"], input[type="password"] {
+    margin-bottom: .5em;
 }
 
-#connectButtons {
-    width: 50%;
-    margin: 0 auto;
+a.btn-default {
+    display: block;
 }
 
-    #connectButtons table {
-        margin: 0 auto 1.5em;
+.btn-default {
+    border: 1px solid #b3b3b3 !important;
+    background: none !important;
+    margin-bottom: 1em !important;
+}
+
+    .btn-default:hover {
+        border: 1px solid #fff !important;
+        color: #fff !important;
     }
 
-    #connectButtons table tr td.icon1 {
-        margin-top: 5px !important;
-    }
+.btn-none {
+    background: none;
+}
 
-    #connectButtons table tr td button {
-        margin: 0;
-        padding: 0;
-    }
-
-    #connectButtons td button {
+    .btn-none:hover {
         background: none;
-        border: none;
-        cursor: pointer;
+        color: #fff;
     }
 
-    #connectButtons button:link,
-    #connectButtons button:focus,
-    #connectButtons button:visited,
-    #connectButtons button:active,
-    #connectButtons button:hover {
-        border: none !important;
-        outline: 0 !important;
-    }
-
-    #connectButtons > div a {
-        display: block;
-        width: 60%;
-        margin: 0 auto;
-        margin-bottom: 10px;
-    }
-
-#regForm {
-    width: 80%;
-    margin: 0 auto;
+#btnFacebook {
+    opacity: 0;
 }
 
-    #regForm .label {
-        display: block;
-        float: left;
-        margin-top: 13px;
-        text-align: right;
-        width: 27%;
-    }
+table.default th, table td {
+    border-bottom: none !important;
+}
 
-    #regForm div:last-child {
-        text-align: center;
-    }
-
-    #regForm .role input {
-        margin-left: 27%;
-    }
-
-#registerButtons {
-    width: 70%;
-    margin: 0 auto;
+#registerButtons form {
     text-align: center;
 }
 
-    #registerButtons form {
-        display: table;
-        width: 100%;
-        margin-bottom: .5em;
-    }
+#connectButtons table td.icon1,
+#connectButtons table td.icon2,
+#connectButtons table td.icon3,
+#connectButtons table td.icon4 {
+    margin: 0;
+    vertical-align: top;
+}
 
-        #registerButtons form span {
-            display: block;
-        }
+#connectButtons table td.icon3,
+#connectButtons table td.icon4 {
+    padding-top: 0 !important;
+}
 
-        /*#registerButtons form input[type="Password"] {
-            margin-left: 5px;
-        }*/
-
-        #registerButtons form button {
-            margin-top: 10px;
-        }
-
-    #registerButtons > div {
-        position: relative;
-        padding: 5px 0;
-    }
-
-        #registerButtons > div span {
-            background: #181a1b;
-            position: absolute;
-            top: 0;
-            right: 50%;
-        }
-
-    #registerButtons > button {
-        margin-top: .5em;
-        background: none;
-        border: none;
-        color: #939494;
-        cursor: pointer;
-    }
-
-/* ---/ Registration --- */
-
-/*@media (min-width: 801px) {
-    #connectButtons table td.icon1 button {
-        background: url(../Images/linkedin.png);
-        height: 96px;
-        width: 99px;
-    }
-
-    #connectButtons table td.icon2 button {
-        background: url(../Images/fb.png);
-        height: 96px;
-        width: 99px;
-    }
-
-    #connectButtons table td.icon3 button {
-        background: url(../Images/twitter.png);
-        height: 96px;
-        width: 99px;
-    }
-
-    #connectButtons table td.icon4 button {
-        background: url(../Images/google.png);
-        height: 96px;
-        width: 99px;
-    }
-}*/
+#connectButtons table td.icon1 button,
+#connectButtons table td.icon2 button,
+#connectButtons table td.icon3 button,
+#connectButtons table td.icon4 button {
+    border: none !important;
+    box-shadow: none;
+}
 
 #connectButtons table td.icon1 button {
     background: url(../Images/linkedin.png);
@@ -370,59 +123,197 @@ footer {
     background: url(../Images/twitter.png);
     height: 96px;
     width: 99px;
+    padding-top: 0 !important;
 }
 
 #connectButtons table td.icon4 button {
     background: url(../Images/google.png);
     height: 96px;
     width: 99px;
+    padding-top: 0 !important;
+}
+
+#connectButtons > div {
+    width: 260px;
+}
+
+    #connectButtons > div a {
+        border: 1px solid silver;
+    }
+
+.reg_container {
+    margin: 0 auto;
+    /*border: 1px solid silver;*/
+}
+
+#regForm .label {
+    display: block;
+    float: left;
+    margin-top: 13px;
+    text-align: right;
+    width: 25%;
+}
+
+#regForm input {
+    margin-left: 1em;
+    margin-bottom: .5em;
+}
+
+#regForm select {
+    margin-bottom: .5em !important;
+    margin-left: 13px;
+}
+
+#regForm .img {
+    margin-left: 13px;
+}
+
+#regForm .submit {
+    width: 73%;
+    margin: 0 auto;
+}
+
+.text-danger {
+    padding-left: 26.5%;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #d44950;
+}
+
+
+@media only screen and (min-width:50px) {
+    /*.container {
+        border: 1px solid green;
+    }*/
+
+    #registerButtons input {
+        width: 100%;
+    }
+
+    .divider {
+        width: 100% !important;
+    }
+
+    td {
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    /*.container {
+        border: 1px solid pink;
+    }*/
+
+    #registerButtons input {
+        width: 100%;
+    }
+
+    .divider {
+        width: 100% !important;
+    }
+
+    #connectButtons {
+        width: 100%;
+    }
+
+    #regForm {
+        text-align: center;
+    }
+
+        #regForm .label {
+            display: none;
+        }
+
+    ul {
+        margin-left: 0 !important;
+    }
+
+        ul li {
+            padding-left: 0 !important;
+        }
+
+    .text-danger {
+        padding-left: 21%;
+    }
+}
+
+@media only screen and (min-width:768px) {
+    /*.container {
+        border: 1px solid red;
+    }*/
+
+    .reg_container {
+        width: 80% !important;
+    }
+
+    #registerButtons input {
+        width: 100%;
+    }
+
+    .divider {
+        width: 100% !important;
+    }
+}
+
+@media only screen and (min-width:992px) {
+    /*.container {
+        border: 1px solid blue;
+    }*/
+
+    .reg_container {
+        width: 60% !important;
+    }
+
+
+    #registerButtons input {
+        width: 80%;
+    }
+
+    .divider {
+        width: 80% !important;
+    }
+}
+
+@media only screen and (min-width:1200px) {
+    /*.container {
+        border: 1px solid orange;
+    }*/
+
+    #registerButtons input {
+        width: 60%;
+    }
+
+    .divider {
+        width: 60% !important;
+    }
 }
 
 #btnFacebook {
     opacity: 0;
 }
 
-/* --- Registraion --- */ /** originally line 224 **/
-/*#connectButtons table {
-    margin: 0 auto 1.5em;
+table td.icon1sm button {
+    background: url(../Images/linkedin_sm.png);
+    height: 50px;
+    width: 50px;
 }
 
-    #connectButtons table tr > td {
-        text-align: center;
-    }
-
-#connectButtons td button {
-    background: none;
-    border: none;
-    cursor: pointer;
+table td.icon2sm button {
+    background: url(../Images/fb_sm.png);
+    height: 50px;
+    width: 50px;
 }
 
-#connectButtons button:link,
-#connectButtons button:focus,
-#connectButtons button:visited,
-#connectButtons button:active,
-#connectButtons button:hover {
-    border: none !important;
-    outline: 0 !important;
+table td.icon3sm button {
+    background: url(../Images/twitter_sm.png);
+    height: 50px;
+    width: 50px;
 }
 
-#connectButtons > div a {
-    padding: 10px 43px;
+table td.icon4sm button {
+    background: url(../Images/google_sm.png);
+    height: 50px;
+    width: 50px;
 }
 
-#regForm {
-    width: 80%;
-    margin: 0 auto;
-}
-
-    #regForm .label {
-        display: block;
-        float: left;
-        margin-top: 13px;
-        text-align: right;
-        width: 27%;
-    }
-
-    #regForm div:last-child {
-        text-align: center;
-    }*/ /** originally line 267 **/

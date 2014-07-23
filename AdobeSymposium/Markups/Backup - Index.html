@@ -1,0 +1,33 @@
+﻿<link rel="stylesheet" href="/Content/main_layout.css"/>
+<link rel="stylesheet" href="/Content/small_layout.css"/>
+<link rel="stylesheet" href="/Content/medium_layout.css"/>
+<div class="container">
+    <section class="content">
+        <div class="content-body">
+            <div data-ng-show="!{{active}}">
+                <div class="raleway mega-hdr center">
+                    <h1>Adobe Symposium App</h1>
+                    <span>by WUNDERMAN</span>
+                </div>
+                <div class="icon_container"></div>
+                <div id="registerButtons" data-ng-init="showButtons=true" data-ng-show="showButtons">
+                    <!--<h4 class="raleway">LOGIN</h4>-->
+                    <form data-ng-submit="loginUser()" name="login">
+                        <label class="hide" for="Email">Email:</label>
+                        <input type="text" id="Email" placeholder="Email" data-ng-model="login.email" data-ng-minlength="1" data-ng-maxlength="254" data-ng-required="true" />
+                        <span class="alert-warning">{{ login.error }}</span>
+                        <label class="hide" for="Password">Password:</label>
+                        <input type="password" id="Password" placeholder="Password" data-ng-model="login.password" data-ng-minlength="6" data-ng-maxlength="30" data-ng-required="true" />
+                        <br />
+                        <button class="btn btn-default btn-lg raleway" type="submit" id="btnLogin">LOG IN</button>
+                    </form>
+                    <div>
+                        <hr />
+                        <span>or</span>
+                    </div>
+                    <button class="" type="button" data-ng-click="userRegister()">CREATE AN ACCOUNT</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -347,6 +347,9 @@
     <Content Include="Images\shape_2_sm.png" />
     <Content Include="Images\twitter.png" />
     <Content Include="Images\twitter_sm.png" />
+    <Content Include="Markups\Backup - Register.html" />
+    <Content Include="Markups\Backup - Index.html" />
+    <Content Include="Markups\Backup - Connect.html" />
     <Content Include="Markups\Profile.html" />
     <Content Include="Markups\Event.html" />
     <Content Include="Scripts\connect.js" />
@@ -354,6 +357,7 @@
     <Content Include="Scripts\directives.js" />
     <Content Include="Scripts\gplus.js" />
     <Content Include="Scripts\services.js" />
+    <Content Include="Scripts\social-connection.js" />
     <Content Include="Scripts\vendor\angular-route.min.js.map" />
     <Content Include="Scripts\vendor\angular.min.js.map" />
     <Content Include="Content\font\symp-icons.eot" />

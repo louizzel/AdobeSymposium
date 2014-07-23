@@ -1,52 +1,44 @@
-﻿<link rel="stylesheet" href="/Content/main_layout.css" />
-<link rel="stylesheet" href="/Content/small_layout.css" />
-<link rel="stylesheet" href="/Content/medium_layout.css" />
+﻿<link href="Content/main_layout.css" rel="stylesheet" />
+<link rel="stylesheet" href="/Content/app.css" />
 <script src="/Scripts/connect.js"></script>
-<div class="container">
-    <header></header>
-    <section class="content">
-        <div class="content-body">
-            <div id="connectButtons" data-ng-show="!showButtons">
-                <h1 class="center raleway">SIGN UP WITH YOUR</h1>
-                <table>
-                    <tr>
-                        <!-- LinkedIn Login Button -->
-                        <!--<td class="icon1">-->
-                        <td class="icon1">
-                            <button>
-                                <span style="opacity: 0;">
-                                    <script type="in/Login"></script>
-                                </span>
-                            </button>
-                        </td>
-                        <!-- Facebook Login Button -->
-                        <td class="icon2">
-                            <button id="btnFacebookConnect">
-                                <fb:login-button id="btnFacebook" scope="publish_actions,public_profile,email" size="xlarge" onlogin="checkLoginState();"></fb:login-button>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <!-- Twitter Login Button -->
-                        <td class="icon3">
-                            <a href="/twitter">
-                                <button></button>
-                            </a>
-                        </td>
-                        <!-- Google Plus Login Button -->
-                        <td class="icon4">
-                            <button id="signinButton">
-                            </button>
-                        </td>
-                    </tr>
-                </table>
-                <!--<div class="center"><a class="btn btn-default btn-lg raleway" href="/#/register">Skip this step</a></div>-->
-                <div class="raleway">
-                    <a class="btn btn-default btn-lg" href="/#">Back</a>
-                    <a class="btn btn-default btn-lg" href="/#/register">Skip this step</a>
-                </div>
-            </div>
+<div id="main">
+    <div id="connectButtons" class="main container unit-60" data-ng-show="!showButtons">
+        <h1 class="center text-centered raleway">SIGN UP WITH YOUR</h1>
+        <table class="container unit-10 default">
+            <tr>
+                <!-- LinkedIn Login Button -->
+                <td class="icon1">
+                    <button>
+                        <span style="opacity: 0;">
+                            <script type="in/Login"></script>
+                        </span>
+                    </button>
+                </td>
+                <!-- Facebook Login Button -->
+                <td class="icon2">
+                    <button id="btnFacebookConnect">
+                        <fb:login-button id="btnFacebook" scope="publish_actions,public_profile,email" size="xlarge" onlogin="checkLoginState();"></fb:login-button>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <!-- Twitter Login Button -->
+                <td class="icon3">
+                    <a href="/twitter">
+                        <button data-ng-click="toTwitter()"></button>
+                    </a>
+                </td>
+                <!-- Google Plus Login Button -->
+                <td class="icon4">
+                    <button id="signinButton">
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <!--<div class="center"><a class="btn btn-default btn-lg raleway" href="/#/register">Skip this step</a></div>-->
+        <div class="container">
+            <a class="btn btn-default btn-big" href="/#">Back</a>
+            <a class="btn btn-default btn-big" href="/#/register">Skip this step</a>
         </div>
-    </section>
-    <footer></footer>
+    </div>
 </div>
