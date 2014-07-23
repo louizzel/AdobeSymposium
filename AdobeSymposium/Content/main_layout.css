@@ -8,8 +8,13 @@ body {
     margin: 0 auto;
 }
 
+#main {
+    display: table;
+}
+
 .main.container {
-    padding: 1.5em;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 ul {
@@ -28,6 +33,7 @@ ul {
     text-align: center;
     font-weight: normal;
     font-family: 'Raleway', sans-serif;
+    margin-top: 1.618em;
 }
 
     .main_header h1 {
@@ -86,6 +92,11 @@ table.default th, table td {
     text-align: center;
 }
 
+    #registerButtons form span {
+        display: block;
+        margin-bottom: .7em;
+    }
+
 #connectButtons table td.icon1,
 #connectButtons table td.icon2,
 #connectButtons table td.icon3,
@@ -99,41 +110,53 @@ table.default th, table td {
     padding-top: 0 !important;
 }
 
-#connectButtons table td.icon1 button,
-#connectButtons table td.icon2 button,
-#connectButtons table td.icon3 button,
-#connectButtons table td.icon4 button {
-    border: none !important;
-    box-shadow: none;
-}
+    #connectButtons table td.icon1 button,
+    #connectButtons table td.icon2 button,
+    #connectButtons table td.icon3 button,
+    #connectButtons table td.icon4 button {
+        border: 1px solid #b3b3b3 !important;
+        box-shadow: none;
+    }
+
+        #connectButtons table td.icon1 button:hover,
+        #connectButtons table td.icon2 button:hover,
+        #connectButtons table td.icon3 button:hover,
+        #connectButtons table td.icon4 button:hover {
+            border: 1px solid #fff !important;
+        }
 
 #connectButtons table td.icon1 button {
     background: url(../Images/linkedin.png);
-    height: 96px;
-    width: 99px;
+    background-repeat: no-repeat;
+    height: 98px;
+    width: 101px;
 }
 
 #connectButtons table td.icon2 button {
     background: url(../Images/fb.png);
-    height: 96px;
-    width: 99px;
+    background-repeat: no-repeat;
+    height: 98px;
+    width: 101px;
 }
 
 #connectButtons table td.icon3 button {
     background: url(../Images/twitter.png);
-    height: 96px;
-    width: 99px;
+    background-repeat: no-repeat;
+    height: 98px;
+    width: 101px;
     padding-top: 0 !important;
 }
 
 #connectButtons table td.icon4 button {
     background: url(../Images/google.png);
-    height: 96px;
-    width: 99px;
+    background-repeat: no-repeat;
+    height: 98px;
+    width: 101px;
     padding-top: 0 !important;
 }
 
 #connectButtons > div {
+    margin-top: 1.5em;
     width: 260px;
 }
 
@@ -173,12 +196,15 @@ table.default th, table td {
     margin: 0 auto;
 }
 
+.text-danger, .alert-warning {
+    color: #d44950;
+}
+
 .text-danger {
     padding-left: 26.5%;
     text-align: left;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: #d44950;
 }
 
 
@@ -205,6 +231,12 @@ table.default th, table td {
         border: 1px solid pink;
     }*/
 
+
+    .icon_container {
+        background: url(../Images/main_icon_sm.png) no-repeat center 0 !important;
+        height: 300px;
+    }
+
     #registerButtons input {
         width: 100%;
     }
@@ -223,6 +255,10 @@ table.default th, table td {
 
         #regForm .label {
             display: none;
+        }
+
+        #regForm input {
+            width: 90%;
         }
 
     ul {
@@ -248,15 +284,15 @@ table.default th, table td {
     }
 
     #registerButtons input {
-        width: 100%;
+        width: 60%;
     }
 
     .divider {
-        width: 100% !important;
+        width: 60% !important;
     }
 }
 
-@media only screen and (min-width:992px) {
+@media only screen and (max-width:992px) {
     /*.container {
         border: 1px solid blue;
     }*/
@@ -281,11 +317,11 @@ table.default th, table td {
     }*/
 
     #registerButtons input {
-        width: 60%;
+        width: 40%;
     }
 
     .divider {
-        width: 60% !important;
+        width: 40% !important;
     }
 }
 
@@ -316,4 +352,3 @@ table td.icon4sm button {
     height: 50px;
     width: 50px;
 }
-

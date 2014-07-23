@@ -8,6 +8,15 @@ body {
     margin: 0 auto;
 }
 
+#main {
+    display: table;
+}
+
+.main.container {
+    display: table-cell;
+    vertical-align: middle;
+}
+
 ul {
     list-style: none;
 }
@@ -24,6 +33,7 @@ ul {
     text-align: center;
     font-weight: normal;
     font-family: 'Raleway', sans-serif;
+    margin-top: 1.618em;
 }
 
     .main_header h1 {
@@ -82,6 +92,11 @@ table.default th, table td {
     text-align: center;
 }
 
+#registerButtons form span {
+    display: block;
+    margin-bottom: .7em;
+}
+
 #connectButtons table td.icon1,
 #connectButtons table td.icon2,
 #connectButtons table td.icon3,
@@ -95,13 +110,13 @@ table.default th, table td {
     padding-top: 0 !important;
 }
 
-#connectButtons table td.icon1 button,
-#connectButtons table td.icon2 button,
-#connectButtons table td.icon3 button,
-#connectButtons table td.icon4 button {
-    border: none !important;
-    box-shadow: none;
-}
+    #connectButtons table td.icon1 button,
+    #connectButtons table td.icon2 button,
+    #connectButtons table td.icon3 button,
+    #connectButtons table td.icon4 button {
+        border: none !important;
+        box-shadow: none;
+    }
 
 #connectButtons table td.icon1 button {
     background: url(../Images/linkedin.png);
@@ -169,12 +184,15 @@ table.default th, table td {
     margin: 0 auto;
 }
 
+.text-danger, .alert-warning {
+    color: #d44950;
+}
+
 .text-danger {
     padding-left: 26.5%;
     text-align: left;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: #d44950;
 }
 
 
@@ -244,15 +262,15 @@ table.default th, table td {
     }
 
     #registerButtons input {
-        width: 100%;
+        width: 60%;
     }
 
     .divider {
-        width: 100% !important;
+        width: 60% !important;
     }
 }
 
-@media only screen and (min-width:992px) {
+@media only screen and (max-width:992px) {
     /*.container {
         border: 1px solid blue;
     }*/
@@ -277,11 +295,11 @@ table.default th, table td {
     }*/
 
     #registerButtons input {
-        width: 60%;
+        width: 40%;
     }
 
     .divider {
-        width: 60% !important;
+        width: 40% !important;
     }
 }
 
@@ -312,4 +330,3 @@ table td.icon4sm button {
     height: 50px;
     width: 50px;
 }
-

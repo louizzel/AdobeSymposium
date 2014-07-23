@@ -1,7 +1,7 @@
 ﻿<link href="Content/main_layout.css" rel="stylesheet" />
 <link rel="stylesheet" href="/Content/app.css" />
 <div id="main">
-    <div class="reg_container vertical-align reg">
+    <div class="main reg_container reg">
         <form id="regForm" name="userForm" data-ng-submit="registerUser(userForm.$valid)" novalidate>
             <div>
                 <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
@@ -86,11 +86,11 @@
         <input type="text" id="Facebook" placeholder="Facebook" data-ng-model="user.facebook" />-->
                 <br />
                 <label class="label"></label>
-                <ul>
+                <!--<ul>
                     <li>
-                        <!--<span style="opacity: 0;">-->
+                        <span style="opacity: 0;">
                             <script type="in/Login"></script>
-                        <!--</span>-->
+                        </span>
                     </li>
                     <li>
                         <button id="btnFacebookConnect">
@@ -101,7 +101,7 @@
                         <img src="../Images/twitter_sm.png" alt="" /></a></li>
                     <li><a href="#">
                         <img src="../Images/google_sm.png" alt="" /></a></li>
-                </ul>
+                </ul>-->
                 <div style="clear: both"></div>
                 <div class="text-centered">
                     <label class="label"></label>

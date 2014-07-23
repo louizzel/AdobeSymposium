@@ -241,7 +241,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/21/2014 18:36:41</publishTime>
     </File>
     <File Include="Content/main_layout.css">
-      <publishTime>07/23/2014 12:36:05</publishTime>
+      <publishTime>07/23/2014 16:51:54</publishTime>
     </File>
     <File Include="Content/medium_layout.css">
       <publishTime>07/20/2014 20:38:05</publishTime>
@@ -562,13 +562,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/23/2014 12:37:53</publishTime>
     </File>
     <File Include="Markups/Connect.html">
-      <publishTime>07/23/2014 12:55:04</publishTime>
+      <publishTime>07/23/2014 16:08:32</publishTime>
     </File>
     <File Include="Markups/Event.html">
       <publishTime>07/21/2014 18:52:53</publishTime>
     </File>
     <File Include="Markups/Index.html">
-      <publishTime>07/23/2014 12:39:22</publishTime>
+      <publishTime>07/23/2014 16:49:23</publishTime>
     </File>
     <File Include="Markups/Login.html">
       <publishTime>07/09/2014 23:35:41</publishTime>
@@ -577,13 +577,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/22/2014 17:19:36</publishTime>
     </File>
     <File Include="Markups/Register.html">
-      <publishTime>07/23/2014 14:09:40</publishTime>
+      <publishTime>07/23/2014 16:08:48</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>07/20/2014 15:07:51</publishTime>
     </File>
     <File Include="Scripts/app.js">
-      <publishTime>07/23/2014 15:50:01</publishTime>
+      <publishTime>07/23/2014 16:13:24</publishTime>
     </File>
     <File Include="Scripts/connect.js">
       <publishTime>07/23/2014 02:21:07</publishTime>

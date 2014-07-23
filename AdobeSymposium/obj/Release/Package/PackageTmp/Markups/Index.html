@@ -1,7 +1,7 @@
 ﻿<link href="Content/main_layout.css" rel="stylesheet" />
 <link rel="stylesheet" href="/Content/app.css" />
 <div id="main">
-    <div class="container unit-60 vertical-align" data-ng-show="!{{active}}">
+    <div class="main container unit-60" data-ng-show="!{{active}}">
         <div class="main_header">
             <h1>Adobe Symposium App</h1>
             <span>by WUNDERMAN</span>
@@ -13,7 +13,7 @@
                 <label class="scroll-element" for="Email">Email:</label>
                 <input class="input-big width-30" type="text" id="Email" placeholder="Email" data-ng-model="login.email" data-ng-minlength="1" data-ng-maxlength="254" data-ng-required="true" />
                 <span class="alert-warning">{{ login.error }}</span>
-                <br />
+                
                 <label class="scroll-element" for="Password">Password:</label>
                 <input class="input-big width-30" type="password" id="Password" placeholder="Password" data-ng-model="login.password" data-ng-minlength="6" data-ng-maxlength="30" data-ng-required="true" />
                 <br />
